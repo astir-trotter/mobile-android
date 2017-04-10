@@ -1,0 +1,2 @@
+include ':app', ':atcustom'
+project(':atcustom').projectDir = new File(rootProject.projectDir, '../AndroidCustomer/atcustom')
