@@ -2,6 +2,8 @@ package com.astir_trotter.atcustom.utils;
 
 import android.util.Log;
 
+import com.astir_trotter.atcustom.global.Constants;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;

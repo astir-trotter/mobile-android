@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mikepenz.iconics.sample">
+
+    <application
+        android:name=".CustomApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PlaygroundActivity"
+            android:label="@string/title_activity_playground"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar.ActionBar" />
+        <activity
+            android:name=".AutomaticActivity"
+            android:label="@string/title_activity_automatic"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar" />
+        <activity
+            android:name=".OldAutomaticActivity"
+            android:label="@string/title_activity_old_automatic"
+            android:theme="@style/MaterialDrawerTheme.Light.ActionBar" />
+    </application>
+
+</manifest>

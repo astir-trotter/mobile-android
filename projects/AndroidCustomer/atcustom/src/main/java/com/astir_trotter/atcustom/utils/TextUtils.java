@@ -8,6 +8,8 @@ package com.astir_trotter.atcustom.utils;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.astir_trotter.atcustom.global.Constants;
+
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

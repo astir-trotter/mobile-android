@@ -1,0 +1,46 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.github.siyamed.shapeimageview.CircularImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:siBorderWidth="6dp"
+        app:siBorderColor="@color/darkgray"
+        android:src="@android:drawable/ic_dialog_map"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.github.siyamed.shapeimageview.CircularImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@android:drawable/ic_dialog_map"
+            app:siBorderWidth="6dp"
+            app:siBorderColor="@color/darkgray"/>
+
+    </RelativeLayout>
+
+    <com.github.siyamed.shapeimageview.HexagonImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/neo"
+        app:siBorderWidth="6dp"
+        app:siBorderColor="@color/darkgray"
+        android:layout_gravity="center_horizontal"/>
+
+    <com.github.siyamed.shapeimageview.HexagonImageView
+        android:id="@+id/img_circle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_dialog_map"
+        app:siBorderWidth="6dp"
+        app:siBorderColor="@color/darkgray"/>
+
+</LinearLayout>
+

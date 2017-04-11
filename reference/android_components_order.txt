@@ -1,0 +1,85 @@
+(done) - ComplexPreferences
+
+
+#######################################################
+## Plug in
+
+- Iconic
+- AutoCrashReport
+
+
+#######################################################
+## Independent View
+
+- Shape ImageView (oval profile picture)
+(done) - BubbleLayout
+- ChartView (MP..., HelloChart)
+- PullToRefreshView
+- JellyToolbar (Search Animation)
+- SlideAndDragListView
+- MaskedEditText
+- NavigationView (Animated EditText)
+- HTextView (Animation)
+- AnimatedSvgView (Animation)
+
+- ViewEffect (blur)
+- Dali (Blur)
+- Animations
+- Folding Cell Android
+- SnowFall Animation
+- WeatherView (Animation - rain, snow, sunny)
+- LikeButton
+- MaterialFavoriteButton (Any button with animation)
+- StickySwitch (Animation)
+- BubblePicker
+- EasyFlipView
+- FabDialogMorph
+- EasyAndroidAnimations (Explode, Fold, Flip)
+- NumberAnimation
+- Beauty-Treatment Animation
+- ticker (Animated Text whenever changes)
+- gif-movie-view
+- AndroidScrollingImageView (Auto-scroll)
+- GoogleMapAnimation
+
+- IndicatorView
+- MKLoader (LoadIndicator animation)
+- Android SpinKit (LoadIndicator animation)
+- LoadingView
+
+- SlideUp (Animation)
+#######################################################
+## Slide
+
+- Snacky
+- CookieBar (Similar to Snacky)
+- TTGSnackbar
+
+- Context Menu (Animation)
+- MaterialDrawer
+- Side Menu (Animation)
+- BoomMenu (Animation)
+
+#######################################################
+## Containers need to interact
+
+- paper-onboarding-android (LearnScreen Animation)
+- ExpectAnim (Animation for scrollview vs profile)
+- MultiSelection
+- FancyShowCaseView (Aniamation to focus on it)
+- Android-Player (Animation on onCreate())
+
+
+#########################################################
+## Cards
+
+Swappable
+https://github.com/xmuSistone/android-card-slide-panel
+https://github.com/yuqirong/CardSwipeLayout
+https://github.com/taoliuh/CardSlidePanel
+
+Credit Card
+https://github.com/vinaygaba/CreditCardView
+
+QR code generator
+https://github.com/RurioLuca/QrCardParsing

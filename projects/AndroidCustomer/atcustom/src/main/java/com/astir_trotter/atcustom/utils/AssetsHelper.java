@@ -7,6 +7,8 @@ package com.astir_trotter.atcustom.utils;
 
 import android.content.Context;
 
+import com.astir_trotter.atcustom.global.Constants;
+
 import java.io.IOException;
 import java.io.InputStream;
 
