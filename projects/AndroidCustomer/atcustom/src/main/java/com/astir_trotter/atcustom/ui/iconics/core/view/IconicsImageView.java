@@ -16,6 +16,7 @@
 
 package com.astir_trotter.atcustom.ui.iconics.core.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.ColorInt;
@@ -30,6 +31,7 @@ import com.astir_trotter.atcustom.ui.iconics.core.IconicsDrawable;
 import com.astir_trotter.atcustom.ui.iconics.core.typeface.IIcon;
 import com.astir_trotter.atcustom.utils.Convertor;
 
+@SuppressLint("AppCompatCustomView")
 public class IconicsImageView extends ImageView {
 
     private IconicsDrawable mIcon = null;

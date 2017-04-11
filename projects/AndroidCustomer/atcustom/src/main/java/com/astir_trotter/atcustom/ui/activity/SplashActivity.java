@@ -6,9 +6,14 @@ import android.os.Handler;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 import com.astir_trotter.atcustom.R;
+import com.astir_trotter.atcustom.global.AppInfo;
+import com.astir_trotter.atcustom.global.Cache;
 import com.astir_trotter.atcustom.utils.ViewUtils;
+
+import java.text.MessageFormat;
 
 public class SplashActivity extends AppCompatActivity {
     private static Class<?> sNextActivity = null;
@@ -51,8 +56,16 @@ public class SplashActivity extends AppCompatActivity {
             setContentView(sSplashContentView);
         else if (sSplashContentLayout != 0)
             setContentView(sSplashContentLayout);
-        else
+        else {
             setContentView(R.layout.activity_splash);
+
+            AppInfo appInfo = Cache.getInstance().getAppInfo();
+            String title = MessageFormat.format("{0} {1}_{2}", appInfo.appName, appInfo.versionName, appInfo.buildNumber);
+            ((TextView) findViewById(R.id.app_name)).setText(title);
+            ((TextView) findViewById(R.id.app_description)).setText(appInfo.appDescription);
+            ((TextView) findViewById(R.id.copyright)).setText(appInfo.copyright);
+            ((TextView) findViewById(R.id.org_name)).setText(appInfo.orgName);
+        }
     }
 
     @Override
@@ -77,7 +90,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void transit() {
         finish();
-        Intent mainIntent = new Intent(SplashActivity.this, sNextActivity);
-        startActivity(mainIntent);
+        Intent nextIntent = new Intent(SplashActivity.this, sNextActivity);
+        startActivity(nextIntent);
     }
 }

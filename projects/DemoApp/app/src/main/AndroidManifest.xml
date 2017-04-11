@@ -19,7 +19,7 @@
         </activity>
 
         <activity
-            android:name="com.astir_trotter.atcustom.crashreport.ErrorReporterActivity"
+            android:name="com.astir_trotter.atcustom.crashreport.CrashReporterActivity"
             android:theme="@android:style/Theme.Dialog"/>
 
         <activity

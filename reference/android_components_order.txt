@@ -5,7 +5,7 @@
 ## Plug in
 
 - Iconic
-- AutoCrashReport
+(done) - AutoCrashReport
 
 
 #######################################################

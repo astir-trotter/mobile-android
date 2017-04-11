@@ -23,6 +23,11 @@ public class Cache {
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     private Context mContext;
+    private AppInfo mAppInfo;
+
+    public Cache() {
+        mAppInfo = new AppInfo();
+    }
 
     public void setContext(Context context) {
         this.mContext = context;
@@ -33,5 +38,9 @@ public class Cache {
             throw new IllegalStateException("No registered context yet.");
 
         return mContext;
+    }
+
+    public AppInfo getAppInfo() {
+        return mAppInfo;
     }
 }

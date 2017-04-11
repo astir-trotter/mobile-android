@@ -16,12 +16,14 @@
 
 package com.astir_trotter.atcustom.ui.iconics.core.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
 import com.astir_trotter.atcustom.ui.iconics.core.Iconics;
 
+@SuppressLint("AppCompatCustomView")
 public class IconicsTextView extends TextView {
 
     public IconicsTextView(Context context) {

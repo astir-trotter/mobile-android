@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.astir_trotter.atcustom.R;
 
-public class ErrorReporterActivity extends Activity implements View.OnClickListener{
+public class CrashReporterActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class ErrorReporterActivity extends Activity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.cr_ok)
-            AutoErrorReporter.get(getApplication()).checkErrorAndSendMail(this);
+            AutoCrashReporter.get(getApplication()).checkErrorAndSendMail(this);
 
         finish();
     }

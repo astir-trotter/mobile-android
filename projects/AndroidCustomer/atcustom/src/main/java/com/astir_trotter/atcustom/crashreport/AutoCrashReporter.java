@@ -29,8 +29,8 @@ import java.io.Writer;
 import java.util.Date;
 import java.util.HashMap;
 
-public class AutoErrorReporter implements Thread.UncaughtExceptionHandler {
-	private static final String TAG = AutoErrorReporter.class.getSimpleName();
+public class AutoCrashReporter implements Thread.UncaughtExceptionHandler {
+	private static final String TAG = AutoCrashReporter.class.getSimpleName();
 
 	private static final boolean DEBUGABLE = true;
 	private static String DEFAULT_EMAIL_SUBJECT = "New Crash Report Generated";
@@ -61,16 +61,16 @@ public class AutoErrorReporter implements Thread.UncaughtExceptionHandler {
 	private HashMap<String, String> customParameters = new HashMap<String, String>();
 
 //	private Thread.UncaughtExceptionHandler previousHandler;
-	private static AutoErrorReporter sInstance;
+	private static AutoCrashReporter sInstance;
 	private Application application;
 
-	private AutoErrorReporter(Application application){
+	private AutoCrashReporter(Application application){
 		this.application = application;
 	}
 
-	public static AutoErrorReporter get(Application application) {
+	public static AutoCrashReporter get(Application application) {
 		if (sInstance == null)
-			sInstance = new AutoErrorReporter(application);
+			sInstance = new AutoCrashReporter(application);
 		return sInstance;
 	}
 
@@ -91,10 +91,10 @@ public class AutoErrorReporter implements Thread.UncaughtExceptionHandler {
 	 * start.
 	 *
 	 * @param emailAddresses one or more email addresses
-	 * @return the current AutoErrorReporterinstance (to allow for method chaining)
+	 * @return the current AutoCrashReporter instance (to allow for method chaining)
 	 */
 
-	public AutoErrorReporter setEmailAddresses(final String... emailAddresses) {
+	public AutoCrashReporter setEmailAddresses(final String... emailAddresses) {
 		if (startAttempted) {
 			throw new IllegalStateException(
 					"EmailAddresses must be set before start");
@@ -108,9 +108,9 @@ public class AutoErrorReporter implements Thread.UncaughtExceptionHandler {
 	 * use the string defined in DEFAULT_EMAIL_SUBJECT This method CANNOT be called
 	 * after calling start.
 	 * @param emailSubject custom email subject line
-	 * @return the current AutoErrorReporter instance (to allow for method chaining)
+	 * @return the current AutoCrashReporter instance (to allow for method chaining)
 	 */
-	public AutoErrorReporter setEmailSubject(final String emailSubject) {
+	public AutoCrashReporter setEmailSubject(final String emailSubject) {
 		if (startAttempted) {
 			throw new IllegalStateException("EmailSubject must be set before start");
 		}
@@ -245,7 +245,7 @@ public class AutoErrorReporter implements Thread.UncaughtExceptionHandler {
 		showLog("Report: "+reportStringBuffer.toString());
 		saveAsFile(reportStringBuffer.toString());
 
-		Intent intent = new Intent(application, ErrorReporterActivity.class);
+		Intent intent = new Intent(application, CrashReporterActivity.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		application.startActivity(intent);
 
