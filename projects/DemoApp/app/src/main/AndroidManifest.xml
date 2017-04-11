@@ -19,6 +19,10 @@
         </activity>
 
         <activity
+            android:name="com.astir_trotter.atcustom.crashreport.ErrorReporterActivity"
+            android:theme="@android:style/Theme.Dialog"/>
+
+        <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main" />
 

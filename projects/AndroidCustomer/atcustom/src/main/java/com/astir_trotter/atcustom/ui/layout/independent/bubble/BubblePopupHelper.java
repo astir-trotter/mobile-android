@@ -1,13 +1,12 @@
 package com.astir_trotter.atcustom.ui.layout.independent.bubble;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
 
-import com.astir_trotter.atcustom.R;
+import com.astir_trotter.atcustom.global.Cache;
 
 /**
  * @author - Saori Sugiyama
@@ -16,23 +15,19 @@ import com.astir_trotter.atcustom.R;
  */
 public class BubblePopupHelper {
 
-    public static PopupWindow create(@NonNull Context context, @NonNull BubbleLayout bubbleLayout) {
+    public static PopupWindow create(@NonNull BubbleLayout bubbleLayout) {
 
-        PopupWindow popupWindow = new PopupWindow(context);
+        PopupWindow popupWindow = new PopupWindow(Cache.getInstance().getContext());
 
         popupWindow.setContentView(bubbleLayout);
         popupWindow.setOutsideTouchable(true);
         popupWindow.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
         popupWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
         popupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
+
         // change background color to transparent
-        Drawable drawable;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            drawable = context.getDrawable(R.drawable.popup_window_transparent);
-        } else {
-            drawable = context.getResources().getDrawable(R.drawable.popup_window_transparent);
-        }
-        popupWindow.setBackgroundDrawable(drawable);
+//        Drawable drawable = ResourceUtils.getDrawable(Cache.getInstance().getContext(), R.drawable.popup_window_transparent);
+        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         return popupWindow;
     }

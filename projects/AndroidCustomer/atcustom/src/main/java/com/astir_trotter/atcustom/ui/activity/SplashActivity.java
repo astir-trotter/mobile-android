@@ -52,7 +52,7 @@ public class SplashActivity extends AppCompatActivity {
         else if (sSplashContentLayout != 0)
             setContentView(sSplashContentLayout);
         else
-            setContentView(R.layout.layout_splash);
+            setContentView(R.layout.activity_splash);
     }
 
     @Override

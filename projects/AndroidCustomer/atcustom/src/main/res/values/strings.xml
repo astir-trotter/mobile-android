@@ -2,8 +2,10 @@
 
     <string name="lib_name">AT-Custom</string>
     <string name="org_name">Astir Trotter</string>
-
     <string name="developers">Developed by Yonis &amp; Saori</string>
     <string name="copyright">Copyright 2017.</string>
+
+    <string name="crashreport_title">New Crash Detected</string>
+    <string name="crashreport_description">Ooooops.. I crashed, but don\'t worry you can send error report to the developer to help him fix the issue.</string>
 
 </resources>
