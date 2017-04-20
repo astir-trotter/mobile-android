@@ -7,7 +7,7 @@ package com.astir_trotter.atcustom.global;
 
 import java.util.regex.Pattern;
 
-public class Constants {
+public class ATConstants {
     public static final String EMPTY_STRING = "";
     public static final String CONDENSER = "\u2026";
 

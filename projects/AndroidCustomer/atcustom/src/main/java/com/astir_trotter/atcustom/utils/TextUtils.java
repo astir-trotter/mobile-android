@@ -8,7 +8,7 @@ package com.astir_trotter.atcustom.utils;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.astir_trotter.atcustom.global.Constants;
+import com.astir_trotter.atcustom.global.ATConstants;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -20,7 +20,7 @@ public class TextUtils {
 
     private static String getNRepeatString(int n, String repetition) {
         if (n <= 0 || repetition.isEmpty())
-            return Constants.EMPTY_STRING;
+            return ATConstants.EMPTY_STRING;
 
         if (repetition.equals(" "))
             return String.format("%" + n + "s", repetition);
@@ -96,7 +96,7 @@ public class TextUtils {
                 else if (radix == 8) suf = "o";
                 else suf = "b";
             } else
-                suf = Constants.EMPTY_STRING;
+                suf = ATConstants.EMPTY_STRING;
 
             return Long.toString((long) d, radix) + suf;
         } else

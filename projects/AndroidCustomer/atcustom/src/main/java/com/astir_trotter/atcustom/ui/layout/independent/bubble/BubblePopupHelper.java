@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
 
-import com.astir_trotter.atcustom.global.Cache;
+import com.astir_trotter.atcustom.global.ATCache;
 
 /**
  * @author - Saori Sugiyama
@@ -17,7 +17,7 @@ public class BubblePopupHelper {
 
     public static PopupWindow create(@NonNull BubbleLayout bubbleLayout) {
 
-        PopupWindow popupWindow = new PopupWindow(Cache.getInstance().getContext());
+        PopupWindow popupWindow = new PopupWindow(ATCache.getInstance().getContext());
 
         popupWindow.setContentView(bubbleLayout);
         popupWindow.setOutsideTouchable(true);
@@ -26,7 +26,7 @@ public class BubblePopupHelper {
         popupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
 
         // change background color to transparent
-//        Drawable drawable = ResourceUtils.getDrawable(Cache.getInstance().getContext(), R.drawable.popup_window_transparent);
+//        Drawable drawable = ResourceUtils.getDrawable(ATCache.getInstance().getContext(), R.drawable.popup_window_transparent);
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         return popupWindow;

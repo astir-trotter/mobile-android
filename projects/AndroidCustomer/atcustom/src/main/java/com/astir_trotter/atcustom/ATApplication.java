@@ -1,14 +1,13 @@
 package com.astir_trotter.atcustom;
 
 import android.app.Application;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.astir_trotter.atcustom.crashreport.AutoCrashReporter;
-import com.astir_trotter.atcustom.global.Cache;
-import com.astir_trotter.atcustom.ui.activity.SplashActivity;
+import com.astir_trotter.atcustom.global.ATAppInfo;
+import com.astir_trotter.atcustom.global.ATCache;
+import com.astir_trotter.atcustom.utils.ResourceUtils;
 
 /**
  * @author - Saori Sugiyama
@@ -23,46 +22,32 @@ public abstract class ATApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        String[] devEmailAddresses = getDeveloperEmailAddress();
-        if (devEmailAddresses != null) {
+        if (isAutoCrashReportEnabled()) {
             AutoCrashReporter.get(this)
-                    .setEmailAddresses(devEmailAddresses)
-                    .setEmailSubject("Auto Crash Report")
+                    .setEmailAddresses(getDeveloperEmailAddress())
+                    .setEmailSubject(getSubjectForAutoCrashRepot())
                     .start();
         }
 
-        calcAppInfo();
-        Cache.getInstance().setContext(this);
+        ATCache.getInstance().setContext(this);
+        ATCache.getInstance().setAppInfo(getAppInfo());
     }
 
-    private void calcAppInfo() {
-        Cache.getInstance().getAppInfo().appName = getAppName();
-        Cache.getInstance().getAppInfo().orgName = getOrgName();
-        Cache.getInstance().getAppInfo().appDescription = getAppDescription();
-        Cache.getInstance().getAppInfo().copyright = getCopyright();
-
-        try {
-            PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
-            Cache.getInstance().getAppInfo().versionName = packageInfo.versionName;
-            Cache.getInstance().getAppInfo().buildNumber = packageInfo.versionCode;
-        } catch (PackageManager.NameNotFoundException ignored) {
-            Cache.getInstance().getAppInfo().versionName = "Unknown";
-            Cache.getInstance().getAppInfo().buildNumber = -1;
-        }
+    protected boolean isAutoCrashReportEnabled() {
+        return true;
     }
 
-    @Nullable
-    protected abstract String[] getDeveloperEmailAddress();
+    @NonNull
+    protected String[] getDeveloperEmailAddress() {
+        return new String[]{"yonis.larsson.biz@gmail.com", "sugiyama.saori.biz@gmail.com"};
+    }
+
+    protected String getSubjectForAutoCrashRepot() {
+        return ResourceUtils.getString(this, R.string.crashreport_title);
+    }
 
     @NonNull
-    protected abstract String getAppName();
-
-    @NonNull
-    protected abstract String getAppDescription();
-
-    @NonNull
-    protected abstract String getOrgName();
-
-    @NonNull
-    protected abstract String getCopyright();
+    protected ATAppInfo getAppInfo() {
+        return ATAppInfo.getDefaultAppInfo(this);
+    }
 }

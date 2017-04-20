@@ -30,7 +30,7 @@ public class PreferencesHelper {
 	private SharedPreferences preferences;
 
 	private PreferencesHelper() {
-		preferences = PreferenceManager.getDefaultSharedPreferences(Cache.getInstance().getContext());
+		preferences = PreferenceManager.getDefaultSharedPreferences(ATCache.getInstance().getContext());
 	}
 
 	public void putObject(String key, Object object) {

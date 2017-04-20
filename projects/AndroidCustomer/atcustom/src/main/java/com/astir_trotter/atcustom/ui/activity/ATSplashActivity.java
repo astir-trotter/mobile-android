@@ -10,14 +10,14 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.astir_trotter.atcustom.R;
-import com.astir_trotter.atcustom.global.AppInfo;
-import com.astir_trotter.atcustom.global.Cache;
+import com.astir_trotter.atcustom.global.ATAppInfo;
+import com.astir_trotter.atcustom.global.ATCache;
 import com.astir_trotter.atcustom.utils.ViewUtils;
 
 import java.text.MessageFormat;
 
-public class SplashActivity extends AppCompatActivity {
-    private static final String TAG = SplashActivity.class.getSimpleName();
+public class ATSplashActivity extends AppCompatActivity {
+    private static final String TAG = ATSplashActivity.class.getSimpleName();
     private static final long DEFAULT_DELAY_DURATION = 3000;
 
     @Override
@@ -33,7 +33,7 @@ public class SplashActivity extends AppCompatActivity {
         else {
             setContentView(R.layout.activity_splash);
 
-            AppInfo appInfo = Cache.getInstance().getAppInfo();
+            ATAppInfo appInfo = ATCache.getInstance().getAppInfo();
             String title = MessageFormat.format("{0} {1}_{2}", appInfo.appName, appInfo.versionName, appInfo.buildNumber);
             ((TextView) findViewById(R.id.app_name)).setText(title);
             ((TextView) findViewById(R.id.app_description)).setText(appInfo.appDescription);
@@ -60,7 +60,7 @@ public class SplashActivity extends AppCompatActivity {
         finish();
 
         if (getNextActivity() != null) {
-            Intent nextIntent = new Intent(SplashActivity.this, getNextActivity());
+            Intent nextIntent = new Intent(ATSplashActivity.this, getNextActivity());
             startActivity(nextIntent);
         }
     }

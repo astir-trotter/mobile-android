@@ -7,7 +7,7 @@ package com.astir_trotter.atcustom.utils;
 
 import android.content.Context;
 
-import com.astir_trotter.atcustom.global.Constants;
+import com.astir_trotter.atcustom.global.ATConstants;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +16,7 @@ public class AssetsHelper {
     private static final String TAG = AssetsHelper.class.getSimpleName();
 
     public static String loadFromAsset(Context context, String filePathName) {
-        String fileContent = Constants.EMPTY_STRING;
+        String fileContent = ATConstants.EMPTY_STRING;
 
         try {
             InputStream is = context.getAssets().open(filePathName);
