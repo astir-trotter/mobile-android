@@ -17,4 +17,9 @@ public class SplashActivity extends ATSplashActivity {
     protected Class<?> getNextActivity() {
         return MainActivity.class;
     }
+
+    @Override
+    protected long getDelayDuration() {
+        return super.getDelayDuration();
+    }
 }

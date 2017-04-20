@@ -1,4 +1,4 @@
-package com.astir_trotter.atcustom.ui.layout.independent.bubble;
+package com.astir_trotter.atcustom.ui.layout.bubble;
 
 /**
  * @author - Saori Sugiyama

@@ -2,7 +2,6 @@ package com.astir_trotter.atcustom;
 
 import android.app.Application;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
 import com.astir_trotter.atcustom.crashreport.AutoCrashReporter;
 import com.astir_trotter.atcustom.global.ATAppInfo;
@@ -42,6 +41,7 @@ public abstract class ATApplication extends Application {
         return new String[]{"yonis.larsson.biz@gmail.com", "sugiyama.saori.biz@gmail.com"};
     }
 
+    @NonNull
     protected String getSubjectForAutoCrashRepot() {
         return ResourceUtils.getString(this, R.string.crashreport_title);
     }

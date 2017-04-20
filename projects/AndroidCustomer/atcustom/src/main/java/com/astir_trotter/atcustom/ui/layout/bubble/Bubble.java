@@ -1,4 +1,4 @@
-package com.astir_trotter.atcustom.ui.layout.independent.bubble;
+package com.astir_trotter.atcustom.ui.layout.bubble;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;

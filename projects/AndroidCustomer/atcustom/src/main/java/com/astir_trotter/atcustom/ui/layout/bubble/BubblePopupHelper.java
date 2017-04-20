@@ -1,4 +1,4 @@
-package com.astir_trotter.atcustom.ui.layout.independent.bubble;
+package com.astir_trotter.atcustom.ui.layout.bubble;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;

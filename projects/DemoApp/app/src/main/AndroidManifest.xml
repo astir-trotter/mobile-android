@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!-- Auto Crash Report-->
+        <activity
+            android:name="com.astir_trotter.atcustom.crashreport.CrashReporterActivity"
+            android:theme="@android:style/Theme.Dialog"/>
+
+
+
+
         <activity
             android:name=".activity.SplashActivity">
             <intent-filter>
@@ -18,17 +26,8 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".activity.MainActivity"
-            android:label="@string/title_activity_main" />
-
-
-
-
-
-        <activity
-            android:name="com.astir_trotter.atcustom.crashreport.CrashReporterActivity"
-            android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.ShimmerActivity" />
 
     </application>
 

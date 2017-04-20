@@ -3,7 +3,7 @@
  * @contact - sugiyama.saori.biz@gmail.com
  * @date - 12/2/16
  */
-package com.astir_trotter.atcustom.ui.layout.independent.bubble;
+package com.astir_trotter.atcustom.ui.layout.bubble;
 
 import android.content.Context;
 import android.content.res.TypedArray;

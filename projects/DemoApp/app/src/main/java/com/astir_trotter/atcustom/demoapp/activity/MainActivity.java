@@ -1,15 +1,15 @@
 package com.astir_trotter.atcustom.demoapp.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.astir_trotter.atcustom.demoapp.R;
+import com.astir_trotter.atcustom.ui.activity.ATBaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ATBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                throw new RuntimeException();
+//                throw new RuntimeException();
+                finish();
+                startActivity(new Intent(MainActivity.this, ShimmerActivity.class));
             }
         });
     }
