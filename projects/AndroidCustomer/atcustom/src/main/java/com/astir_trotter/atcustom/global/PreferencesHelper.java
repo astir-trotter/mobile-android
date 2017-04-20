@@ -14,7 +14,6 @@ import com.google.gson.Gson;
 
 public class PreferencesHelper {
 	private static final String TAG = PreferencesHelper.class.getSimpleName();
-	private static final String DEFAULT_NAME = TAG.toLowerCase();
 
 	private static PreferencesHelper _instance;
 	private static Gson GSON = new Gson();

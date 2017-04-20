@@ -1,11 +1,6 @@
 package com.astir_trotter.atcustom.demoapp;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-
 import com.astir_trotter.atcustom.ATApplication;
-import com.astir_trotter.atcustom.demoapp.activity.MainActivity;
-import com.astir_trotter.atcustom.utils.ResourceUtils;
 
 /**
  * @author - Saori Sugiyama

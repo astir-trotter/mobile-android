@@ -3,7 +3,7 @@
  * @contact - nicklass.fransson@gmail.com
  * @date - 2/7/17
  */
-package com.astir_trotter.atcustom.utils;
+package com.astir_trotter.atcustom.global;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
