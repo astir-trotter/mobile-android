@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.astir_trotter.atcustom.ui.activity.SplashActivity">
+            android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -19,12 +19,16 @@
         </activity>
 
         <activity
-            android:name="com.astir_trotter.atcustom.crashreport.CrashReporterActivity"
-            android:theme="@android:style/Theme.Dialog"/>
-
-        <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main" />
+
+
+
+
+
+        <activity
+            android:name="com.astir_trotter.atcustom.crashreport.CrashReporterActivity"
+            android:theme="@android:style/Theme.Dialog"/>
 
     </application>
 

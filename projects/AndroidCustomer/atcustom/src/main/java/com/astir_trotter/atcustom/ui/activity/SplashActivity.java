@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
@@ -16,35 +17,8 @@ import com.astir_trotter.atcustom.utils.ViewUtils;
 import java.text.MessageFormat;
 
 public class SplashActivity extends AppCompatActivity {
-    private static Class<?> sNextActivity = null;
-    private static boolean  sNeedToSplash = true;
-    private static long     sDelayDuration = 3000;      // ms
-    private static View     sSplashContentView = null;
-    private static int      sSplashContentLayout = 0;   // @LayoutRes
-
-    public static void setNextActivity(Class<?> nextActivity) {
-        SplashActivity.sNextActivity = nextActivity;
-    }
-
-    public static void setNeedToSplash(boolean isNeedToSplash) {
-        SplashActivity.sNeedToSplash = isNeedToSplash;
-    }
-
-    public static void setDelayDuration(long delayDuration) {
-        SplashActivity.sDelayDuration = delayDuration;
-    }
-
-    public static void setSplashContentView(View splashContentView) {
-        SplashActivity.sSplashContentView = splashContentView;
-        SplashActivity.sSplashContentLayout = 0;
-    }
-
-    public static void setSplashContentLayout(@LayoutRes int splashContentLayout) {
-        SplashActivity.sSplashContentLayout = splashContentLayout;
-        SplashActivity.sSplashContentView = null;
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
+    private static final String TAG = SplashActivity.class.getSimpleName();
+    private static final long DEFAULT_DELAY_DURATION = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +26,10 @@ public class SplashActivity extends AppCompatActivity {
 
         ViewUtils.makeFullScreen(getWindow());
 
-        if (sSplashContentView != null)
-            setContentView(sSplashContentView);
-        else if (sSplashContentLayout != 0)
-            setContentView(sSplashContentLayout);
+        if (getContentView() != null)
+            setContentView(getContentView());
+        else if (getContentLayout() != 0)
+            setContentView(getContentLayout());
         else {
             setContentView(R.layout.activity_splash);
 
@@ -72,25 +46,44 @@ public class SplashActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        if (sNeedToSplash) {
-            if (sNextActivity == null)
-                throw new IllegalStateException("Not next activity set!");
-
-            new Handler().postDelayed(new Runnable()
+        new Handler().postDelayed(new Runnable()
             {
                 @Override
                 public void run()
                 {
                     transit();
                 }
-            }, sDelayDuration);
-        } else
-            transit();
+            }, getDelayDuration());
     }
 
-    private void transit() {
+    protected void transit() {
         finish();
-        Intent nextIntent = new Intent(SplashActivity.this, sNextActivity);
-        startActivity(nextIntent);
+
+        if (getNextActivity() != null) {
+            Intent nextIntent = new Intent(SplashActivity.this, getNextActivity());
+            startActivity(nextIntent);
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // getter
+
+    @Nullable
+    protected View getContentView() {
+        return null;
+    }
+
+    @LayoutRes
+    protected int getContentLayout() {
+        return 0;
+    }
+
+    @Nullable
+    protected Class<?> getNextActivity() {
+        return null;
+    }
+
+    protected long getDelayDuration() {
+        return DEFAULT_DELAY_DURATION;
     }
 }

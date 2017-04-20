@@ -17,12 +17,6 @@ public class DemoApplication extends ATApplication {
 
     @Nullable
     @Override
-    protected Class<?> getNextActivity() {
-        return MainActivity.class;
-    }
-
-    @Nullable
-    @Override
     protected String[] getDeveloperEmailAddress() {
         return new String[]{"yonis.larsson.biz@gmail.com", "sugiyama.saori.biz@gmail.com"};
     }

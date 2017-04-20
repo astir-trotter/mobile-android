@@ -33,10 +33,6 @@ public abstract class ATApplication extends Application {
 
         calcAppInfo();
         Cache.getInstance().setContext(this);
-
-        if (getNextActivity() != null)
-            SplashActivity.setNextActivity(getNextActivity());
-
     }
 
     private void calcAppInfo() {
@@ -54,9 +50,6 @@ public abstract class ATApplication extends Application {
             Cache.getInstance().getAppInfo().buildNumber = -1;
         }
     }
-
-    @Nullable
-    protected abstract Class<?> getNextActivity();
 
     @Nullable
     protected abstract String[] getDeveloperEmailAddress();
