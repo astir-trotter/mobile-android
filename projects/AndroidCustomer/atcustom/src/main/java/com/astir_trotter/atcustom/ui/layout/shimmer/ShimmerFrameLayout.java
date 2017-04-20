@@ -1,5 +1,3 @@
-// Copyright 2004-present Facebook. All Rights Reserved.
-
 package com.astir_trotter.atcustom.ui.layout.shimmer;
 
 import android.animation.Animator;

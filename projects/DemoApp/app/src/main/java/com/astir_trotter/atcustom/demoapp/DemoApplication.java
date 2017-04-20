@@ -9,9 +9,4 @@ import com.astir_trotter.atcustom.ATApplication;
  */
 
 public class DemoApplication extends ATApplication {
-
-    @Override
-    protected boolean isAutoCrashReportEnabled() {
-        return false;
-    }
 }

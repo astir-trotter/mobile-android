@@ -33,7 +33,7 @@
           android:layout_marginTop="20dp"
           android:gravity="center"
           android:text="Facebook’s mission is to give people the power to share and make the world more open and connected."
-          style="@style/thin.white.large"/>
+          style="@style/AT.Text.Serif.Large"/>
     </LinearLayout>
   </com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout>
 
@@ -51,7 +51,7 @@
         android:layout_marginRight="10dp"
         android:text="Presets"
         android:textAllCaps="true"
-        style="@style/thin.white.small"
+        style="@style/AT.Text.Serif.Small"
         />
 
     <Button

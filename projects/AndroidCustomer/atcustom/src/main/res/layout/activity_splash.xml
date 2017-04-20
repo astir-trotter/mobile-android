@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary"
+    android:background="@color/colorPrimary"
     android:gravity="center">
 
-    <TextView
-        android:id="@+id/app_name"
+    <com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="5"
-        android:gravity="bottom"
-        android:text="APP_NAME VERSION"
-        android:textSize="30sp"
-        android:textColor="@android:color/white"/>
+        android:gravity="center"
+        shimmer:auto_start="true">
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:text="APP_NAME VERSION"
+            android:textSize="30sp"
+            android:textColor="@android:color/white"/>
+    </com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout>
 
     <TextView
         android:id="@+id/app_description"

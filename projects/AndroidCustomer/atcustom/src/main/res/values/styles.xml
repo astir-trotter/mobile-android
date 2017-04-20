@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="AT.App" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+    </style>
+
+    <style name="AT.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AT.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AT.AutoCrashReportDialog" parent="@android:style/Theme.Dialog" />
+
+    <style name="AT.Button" parent="@android:style/Widget.Button">
+        <item name="android:background">?android:selectableItemBackground</item>
+    </style>
+
+    <style name="AT.Text.Serif" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif-thin</item>
+    </style>
+
+    <style name="AT.Text.Serif.Small" parent="AT.Text.Serif">
+        <item name="android:textSize">@dimen/textsize_small</item>
+    </style>
+
+    <style name="AT.Text.Serif.Normal" parent="AT.Text.Serif">
+        <item name="android:textSize">@dimen/textsize_normal</item>
+    </style>
+
+    <style name="AT.Text.Serif.Large" parent="AT.Text.Serif">
+        <item name="android:textSize">@dimen/textsize_large</item>
+    </style>
+
+    <style name="AT.Text.Serif.Title" parent="AT.Text.Serif">
+        <item name="android:textSize">@dimen/textsize_title</item>
+    </style>
+
+</resources>

@@ -7,5 +7,4 @@
 
     <string name="crashreport_title">New Crash Detected</string>
     <string name="crashreport_description">Ooooops.. I crashed, but don\'t worry you can send error report to the developer to help him fix the issue.</string>
-
 </resources>
