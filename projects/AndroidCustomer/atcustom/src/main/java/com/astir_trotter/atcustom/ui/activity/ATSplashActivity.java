@@ -1,11 +1,9 @@
 package com.astir_trotter.atcustom.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,7 +14,7 @@ import com.astir_trotter.atcustom.utils.ViewUtils;
 
 import java.text.MessageFormat;
 
-public class ATSplashActivity extends AppCompatActivity {
+public class ATSplashActivity extends ATBaseActivity {
     private static final String TAG = ATSplashActivity.class.getSimpleName();
     private static final long DEFAULT_DELAY_DURATION = 3000;
 
@@ -24,7 +22,7 @@ public class ATSplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ViewUtils.makeFullScreen(getWindow());
+        fullscreen();
 
         if (getContentView() != null)
             setContentView(getContentView());
@@ -46,22 +44,13 @@ public class ATSplashActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        new Handler().postDelayed(new Runnable()
-            {
+        if (getNextActivity() != null) {
+            new Handler().postDelayed(new Runnable() {
                 @Override
-                public void run()
-                {
-                    transit();
+                public void run() {
+                    transit(getNextActivity(), true);
                 }
             }, getDelayDuration());
-    }
-
-    protected void transit() {
-        finish();
-
-        if (getNextActivity() != null) {
-            Intent nextIntent = new Intent(ATSplashActivity.this, getNextActivity());
-            startActivity(nextIntent);
         }
     }
 

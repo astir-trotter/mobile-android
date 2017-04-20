@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:gravity="center">
+    android:gravity="center"
+    android:theme="@style/AT.App">
 
     <com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout
         android:layout_width="wrap_content"
@@ -20,8 +21,7 @@
             android:layout_height="match_parent"
             android:gravity="bottom"
             android:text="APP_NAME VERSION"
-            android:textSize="30sp"
-            android:textColor="@android:color/white"/>
+            style="@style/AT.Text.Serif.Title"/>
     </com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout>
 
     <TextView
@@ -31,8 +31,7 @@
         android:layout_weight="1"
         android:gravity="bottom"
         android:text="APP_DESCRIPTION"
-        android:textSize="20sp"
-        android:textColor="@android:color/white"/>
+        style="@style/AT.Text.Serif.Normal"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -46,8 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="COPYRIGHT"
-            android:textSize="16sp"
-            android:textColor="@android:color/white"/>
+            style="@style/AT.Text.Serif.Small"/>
 
         <TextView
             android:id="@+id/org_name"
@@ -56,8 +54,7 @@
             android:layout_marginLeft="5dp"
             android:text="ORG_NAME"
             android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="@android:color/white"/>
+            style="@style/AT.Text.Serif.Small"/>
 
     </LinearLayout>
 

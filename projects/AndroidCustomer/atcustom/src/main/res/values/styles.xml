@@ -40,6 +40,12 @@
 
     <style name="AT.Text.Serif.Title" parent="AT.Text.Serif">
         <item name="android:textSize">@dimen/textsize_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AT.Text.Serif.Subtitle" parent="AT.Text.Serif">
+        <item name="android:textSize">@dimen/textsize_title</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
