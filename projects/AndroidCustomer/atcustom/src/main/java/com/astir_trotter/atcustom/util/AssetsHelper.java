@@ -7,17 +7,19 @@ package com.astir_trotter.atcustom.util;
 
 import android.content.Context;
 
+import com.astir_trotter.atcustom.singleton.Cache;
+
 import java.io.IOException;
 import java.io.InputStream;
 
 public class AssetsHelper {
     private static final String TAG = AssetsHelper.class.getSimpleName();
 
-    public static String loadFromAsset(Context context, String filePathName) {
+    public static String loadFromAsset(String filePathName) {
         String fileContent = Constants.EMPTY_STRING;
 
         try {
-            InputStream is = context.getAssets().open(filePathName);
+            InputStream is = Cache.getInstance().getContext().getAssets().open(filePathName);
             int size = is.available();
             byte[] buffer = new byte[size];
             int readSize = is.read(buffer);

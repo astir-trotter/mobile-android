@@ -11,9 +11,23 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TextUtils {
     private static final String TAG = TextUtils.class.getSimpleName();
+
+    public static String[] getLines(@NonNull String text) {
+        Pattern pattern = Pattern.compile("^(.*)$", Constants.PATTERN_FLAG);
+        Matcher matcher = pattern.matcher(text).useAnchoringBounds(false);
+        List<String> ret = new ArrayList<>();
+        while (matcher.find())
+            ret.add(matcher.group(1));
+
+        return ret.toArray(new String[ret.size()]);
+    }
 
     private static String getNRepeatString(int n, String repetition) {
         if (n <= 0 || repetition.isEmpty())

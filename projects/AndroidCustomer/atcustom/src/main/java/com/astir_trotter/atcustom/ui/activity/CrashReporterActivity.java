@@ -15,9 +15,11 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.astir_trotter.atcustom.R;
+import com.astir_trotter.atcustom.singleton.MultiLangStringRes;
 import com.astir_trotter.atcustom.ui.activity.base.AutoCrashReporter;
 
-public class CrashReporterActivity extends BaseActivity implements View.OnClickListener{
+// Do not use BaseActivity nor AppCompatActivity
+public class CrashReporterActivity extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +35,16 @@ public class CrashReporterActivity extends BaseActivity implements View.OnClickL
     }
 
     private void init() {
+        TextView tvTitle = (TextView) findViewById(R.id.cr_title);
+        tvTitle.setText(MultiLangStringRes.getInstance().get(R.string.crashreport_title));
+        TextView tvDescription = (TextView) findViewById(R.id.cr_description);
+        tvDescription.setText(MultiLangStringRes.getInstance().get(R.string.crashreport_description));
+
         TextView tvCancel = (TextView) findViewById(R.id.cr_cancel);
+        tvCancel.setText(MultiLangStringRes.getInstance().get(android.R.string.cancel));
         tvCancel.setOnClickListener(this);
         TextView tvReport = (TextView) findViewById(R.id.cr_ok);
+        tvReport.setText(MultiLangStringRes.getInstance().get(android.R.string.ok));
         tvReport.setOnClickListener(this);
     }
 

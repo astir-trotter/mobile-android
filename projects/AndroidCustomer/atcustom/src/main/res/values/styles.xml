@@ -15,6 +15,4 @@
 
     <style name="AT.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="AT.AutoCrashReportDialog" parent="@android:style/Theme.Dialog" />
-
 </resources>

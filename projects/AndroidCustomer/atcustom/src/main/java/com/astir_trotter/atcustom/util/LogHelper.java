@@ -13,10 +13,10 @@ import com.astir_trotter.atcustom.singleton.Cache;
 public class LogHelper {
 
     public static void log(String tag, String content) {
-        if (!Cache.getInstance().isDebug())
-            return;
+//        if (!Cache.getInstance().isDebug())
+//            return;
 
-        Log.d(tag, content);
+//        Log.d(tag, content);
     }
 
 }

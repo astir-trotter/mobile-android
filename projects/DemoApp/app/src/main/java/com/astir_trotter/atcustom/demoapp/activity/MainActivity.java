@@ -21,8 +21,8 @@ public class MainActivity extends BaseActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                throw new RuntimeException();
-                transit(ShimmerActivity.class, false);
+                throw new RuntimeException();
+//                transit(ShimmerActivity.class, false);
             }
         });
     }

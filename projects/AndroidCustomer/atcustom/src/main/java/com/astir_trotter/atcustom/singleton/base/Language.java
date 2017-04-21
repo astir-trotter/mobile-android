@@ -15,7 +15,7 @@ public enum Language {
     German("Deutsche"),
     Chinese("中文"),
     Japanese("日本語"),
-    Korean("조선어"),
+    Korean("한국어"),
     Arabics("عربى", true);
 
     ////////////////////////////////////////////////////////////////////////////////////////////////

@@ -14,6 +14,11 @@ import com.astir_trotter.atcustom.util.ResourceUtils;
 
 public class DemoApplication extends ATApplication {
 
+    @Override
+    protected boolean isDebug() {
+        return super.isDebug();
+    }
+
     @NonNull
     @Override
     protected AppInfo getAppInfo() {
@@ -21,5 +26,11 @@ public class DemoApplication extends ATApplication {
         appInfo.appName = ResourceUtils.getString(this, R.string.app_name);
 
         return appInfo;
+    }
+
+    @NonNull
+    @Override
+    protected String[] getDeveloperEmailAddress() {
+        return super.getDeveloperEmailAddress();
     }
 }

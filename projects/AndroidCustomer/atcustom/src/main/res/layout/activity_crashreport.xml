@@ -15,6 +15,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/cr_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="start|center_vertical"
@@ -28,6 +29,7 @@
             android:layout_marginBottom="20dp"/>
 
         <TextView
+            android:id="@+id/cr_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="start|center_vertical"

@@ -31,4 +31,14 @@ public class StringRes extends HashMap<Integer, String> {
 
         return ret;
     }
+
+    @Override
+    public String put(Integer key, String value) {
+        return super.put(key, value);
+    }
+
+    public StringRes putRepeat(Integer key, String value) {
+        put(key, value);
+        return this;
+    }
 }
