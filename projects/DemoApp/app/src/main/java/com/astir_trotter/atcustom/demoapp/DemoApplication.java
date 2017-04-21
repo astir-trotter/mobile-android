@@ -16,14 +16,14 @@ public class DemoApplication extends ATApplication {
 
     @Override
     protected boolean isDebug() {
-        return super.isDebug();
+        return false;//super.isDebug();
     }
 
     @NonNull
     @Override
     protected AppInfo getAppInfo() {
         AppInfo appInfo = super.getAppInfo();
-        appInfo.appName = ResourceUtils.getString(this, R.string.app_name);
+        appInfo.appName = ResourceUtils.getString(R.string.app_name);
 
         return appInfo;
     }
@@ -32,5 +32,11 @@ public class DemoApplication extends ATApplication {
     @Override
     protected String[] getDeveloperEmailAddress() {
         return super.getDeveloperEmailAddress();
+    }
+
+    @Override
+    protected void initMultiLangStringRes() {
+        super.initMultiLangStringRes();
+
     }
 }

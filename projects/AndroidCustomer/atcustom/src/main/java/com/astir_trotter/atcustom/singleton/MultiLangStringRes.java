@@ -1,6 +1,7 @@
 package com.astir_trotter.atcustom.singleton;
 
 import android.content.res.Resources;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.astir_trotter.atcustom.R;
@@ -52,11 +53,25 @@ public class MultiLangStringRes {
         return stringRes;
     }
 
+    @Nullable
     public String get(Integer id) {
         String ret = getStringRes(Cache.getInstance().getLanguage()).get(id);
-        if (ret.isEmpty()) {
+        if (ret == null) {
             try {
-                ret = ResourceUtils.getString(Cache.getInstance().getContext(), id);
+                ret = ResourceUtils.getString(id);
+            } catch (Resources.NotFoundException ignored) {
+            }
+        }
+
+        return ret;
+    }
+
+    @Nullable
+    public String[] getArray(Integer id) {
+        String[] ret = getStringRes(Cache.getInstance().getLanguage()).getArray(id);
+        if (ret == null) {
+            try {
+                ret = ResourceUtils.getStrings(id);
             } catch (Resources.NotFoundException ignored) {
             }
         }

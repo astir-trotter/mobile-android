@@ -51,10 +51,10 @@ public class AppInfo {
     public static AppInfo getDefaultAppInfo(Context context) {
         return new AppInfo(
                 context,
-                ResourceUtils.getString(context, R.string.lib_name),        // app name
-                ResourceUtils.getString(context, R.string.org_name),        // org name
-                ResourceUtils.getString(context, R.string.app_description), // app description
-                ResourceUtils.getString(context, R.string.copyright)        // copyright
+                ResourceUtils.getString(R.string.lib_name),        // app name
+                ResourceUtils.getString(R.string.org_name),        // org name
+                ResourceUtils.getString(R.string.app_description), // app description
+                ResourceUtils.getString(R.string.copyright)        // copyright
         );
     }
 }

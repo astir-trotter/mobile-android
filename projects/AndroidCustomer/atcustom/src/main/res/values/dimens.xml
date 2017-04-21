@@ -6,11 +6,4 @@
     <dimen name="textsize_large">23sp</dimen>
     <dimen name="textsize_title">30sp</dimen>
     <dimen name="textsize_subtitle">@dimen/textsize_large</dimen>
-
-
-    <dimen name="item_height">45dp</dimen>
-    <dimen name="container_height">53dp</dimen>
-    <dimen name="container_margin">53.8dp</dimen>
-    <dimen name="item_half_height">22.5dp</dimen>
-    <dimen name="margin">6dp</dimen>
 </resources>

@@ -50,7 +50,6 @@ public abstract class ATApplication extends Application {
         return new String[]{"yonis.larsson.biz@gmail.com", "sugiyama.saori.biz@gmail.com"};
     }
 
-    @NonNull
     protected String getSubjectForAutoCrashRepot() {
         return MultiLangStringRes.getInstance().get(R.string.crashreport_title);
     }
