@@ -1,7 +1,6 @@
 package com.astir_trotter.atcustom.ui.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -16,6 +15,8 @@ import java.text.MessageFormat;
 public class ATSplashActivity extends ATBaseActivity {
     private static final String TAG = ATSplashActivity.class.getSimpleName();
     private static final long DEFAULT_DELAY_DURATION = 3000;
+
+    private Runnable mDelayedTransit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,17 +41,28 @@ public class ATSplashActivity extends ATBaseActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+
+        if (mDelayedTransit != null) {
+            getHandler().removeCallbacks(mDelayedTransit);
+        }
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
 
         if (getNextActivityClass() != null) {
-            new Handler().postDelayed(new Runnable() {
+            mDelayedTransit = new Runnable() {
                 @Override
                 public void run() {
                     transit(getNextActivityClass(), true);
                 }
-            }, getDelayDuration());
-        }
+            };
+            getHandler().postDelayed(mDelayedTransit, getDelayDuration());
+        } else
+            mDelayedTransit = null;
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////

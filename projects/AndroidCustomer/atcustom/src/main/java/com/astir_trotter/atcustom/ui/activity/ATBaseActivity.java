@@ -1,6 +1,7 @@
 package com.astir_trotter.atcustom.ui.activity;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
@@ -13,6 +14,16 @@ import com.astir_trotter.atcustom.utils.ViewUtils;
  */
 
 public abstract class ATBaseActivity extends AppCompatActivity {
+    private static final String TAG = ATBaseActivity.class.getSimpleName();
+
+    private Handler mHandler;
+
+    public Handler getHandler() {
+        if (mHandler == null)
+            mHandler = new Handler();
+
+        return mHandler;
+    }
 
     public void transit(@NonNull Class<?> nextActivityClass,
                         boolean isCloseSelf) {
