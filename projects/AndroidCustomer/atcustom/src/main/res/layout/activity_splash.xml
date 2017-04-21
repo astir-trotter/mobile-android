@@ -6,62 +6,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:gravity="center"
+    android:weightSum="13.5"
+    android:gravity="center_horizontal"
     android:theme="@style/AT.App">
 
     <com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="5"
-        android:gravity="center"
+        android:layout_weight="6"
         shimmer:auto_start="true"
-        shimmer:dropoff="0.8">
-        <TextView
-            android:id="@+id/app_name"
-            android:layout_width="wrap_content"
+        shimmer:angle="cw_90"
+        shimmer:base_alpha="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="bottom"
-            android:text="APP_NAME VERSION"
-            style="@style/AT.Text.Serif.Title"/>
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:gravity="bottom"
+                android:text="APP_NAME VERSION"
+                style="@style/AT.Text.Serif.Title"/>
+            <TextView
+                android:id="@+id/app_description"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:text="APP_DESCRIPTION"
+                style="@style/AT.Text.Serif.Subtitle"/>
+        </LinearLayout>
+
     </com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout>
 
-    <TextView
-        android:id="@+id/app_description"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="bottom"
-        android:text="APP_DESCRIPTION"
-        style="@style/AT.Text.Serif.Normal"/>
-
-    <LinearLayout
+    <com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="6"
-        android:gravity="bottom"
-        android:orientation="horizontal">
+        shimmer:auto_start="true"
+        shimmer:repeat_mode="reverse"
+        shimmer:base_alpha="0.7">
 
-        <TextView
-            android:id="@+id/copyright"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="COPYRIGHT"
-            style="@style/AT.Text.Serif.Small"/>
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/copyright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COPYRIGHT"
+                style="@style/AT.Text.Serif.Small"/>
+            <TextView
+                android:id="@+id/org_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="ORG_NAME"
+                android:textStyle="bold"
+                style="@style/AT.Text.Serif.Small"/>
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/org_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="ORG_NAME"
-            android:textStyle="bold"
-            style="@style/AT.Text.Serif.Small"/>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1.5" />
+    </com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout>
 
 </LinearLayout>

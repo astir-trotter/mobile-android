@@ -14,7 +14,7 @@ import java.text.MessageFormat;
 
 public class ATSplashActivity extends ATBaseActivity {
     private static final String TAG = ATSplashActivity.class.getSimpleName();
-    private static final long DEFAULT_DELAY_DURATION = 3000;
+    private static final long DEFAULT_DELAY_DURATION = 5000;
 
     private Runnable mDelayedTransit;
 
@@ -57,12 +57,17 @@ public class ATSplashActivity extends ATBaseActivity {
             mDelayedTransit = new Runnable() {
                 @Override
                 public void run() {
-                    transit(getNextActivityClass(), true);
+                    transit();
                 }
             };
             getHandler().postDelayed(mDelayedTransit, getDelayDuration());
         } else
             mDelayedTransit = null;
+    }
+
+    private void transit() {
+        assert getNextActivityClass() != null;
+        transit(getNextActivityClass(), true);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
