@@ -14,13 +14,20 @@ import com.astir_trotter.atcustom.utils.ViewUtils;
 
 public abstract class ATBaseActivity extends AppCompatActivity {
 
-    public void transit(@NonNull Class<?> nextActivity,
-                           boolean isClose) {
-        if (isClose)
-            finish();
+    public void transit(@NonNull Class<?> nextActivityClass,
+                        boolean isCloseSelf) {
+        transit(nextActivityClass, isCloseSelf, 0);
+    }
 
-        Intent nextIntent = new Intent(this, nextActivity);
+    public void transit(@NonNull Class<?> nextActivityClass,
+                        boolean isCloseSelf,
+                        int flags) {
+        Intent nextIntent = new Intent(this, nextActivityClass);
+        nextIntent.setFlags(flags);
         startActivity(nextIntent);
+
+        if (isCloseSelf)
+            finish();
     }
 
     public void fullscreen() {

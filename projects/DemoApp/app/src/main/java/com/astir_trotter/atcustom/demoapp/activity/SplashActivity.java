@@ -14,7 +14,7 @@ public class SplashActivity extends ATSplashActivity {
 
     @Nullable
     @Override
-    protected Class<?> getNextActivity() {
+    protected Class<?> getNextActivityClass() {
         return MainActivity.class;
     }
 

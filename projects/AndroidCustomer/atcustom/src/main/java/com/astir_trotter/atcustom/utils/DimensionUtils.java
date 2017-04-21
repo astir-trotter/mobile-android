@@ -5,13 +5,10 @@
  */
 package com.astir_trotter.atcustom.utils;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.support.annotation.NonNull;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 
 public class DimensionUtils {
@@ -55,20 +52,14 @@ public class DimensionUtils {
     }
 
     private final static TypedValue tv = new TypedValue();
-    public static int getActionBarHeight(@NonNull Activity activity) {
-        if (activity instanceof AppCompatActivity) {
-            ActionBar actionBar = ((AppCompatActivity) activity).getSupportActionBar();
-            if (actionBar != null && actionBar.getHeight() != 0)
-                return actionBar.getHeight();
-        }
-
+    public static int getActionBarHeight(Context context) {
         int actionBarHeight = 0;
-        if (activity.getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+        if (context.getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
             actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,
-                    activity.getResources().getDisplayMetrics());
-        } else if (activity.getTheme().resolveAttribute( android.support.v7.appcompat.R.attr.actionBarSize, tv, true)) {
+                    context.getResources().getDisplayMetrics());
+        } else if (context.getTheme().resolveAttribute( android.support.v7.appcompat.R.attr.actionBarSize, tv, true)) {
             actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,
-                    activity.getResources().getDisplayMetrics());
+                    context.getResources().getDisplayMetrics());
         }
 
         return actionBarHeight;

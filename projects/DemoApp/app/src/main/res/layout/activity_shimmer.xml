@@ -51,7 +51,7 @@
         android:layout_marginRight="10dp"
         android:text="Presets"
         android:textAllCaps="true"
-        style="@style/AT.Text.Serif.Small"
+        style="@style/AT.Text.Serif.Normal"
         />
 
     <Button

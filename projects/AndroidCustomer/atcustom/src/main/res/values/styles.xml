@@ -17,7 +17,7 @@
 
     <style name="AT.AutoCrashReportDialog" parent="@android:style/Theme.Dialog" />
 
-    <style name="AT.Button" parent="@android:style/Widget.Button">
+    <style name="AT.Button" parent="AT.Text.Serif.Normal">
         <item name="android:background">?android:selectableItemBackground</item>
     </style>
 

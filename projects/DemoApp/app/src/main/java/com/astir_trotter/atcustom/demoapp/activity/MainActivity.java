@@ -23,8 +23,7 @@ public class MainActivity extends ATBaseActivity {
             @Override
             public void onClick(View view) {
 //                throw new RuntimeException();
-                finish();
-                startActivity(new Intent(MainActivity.this, ShimmerActivity.class));
+                transit(ShimmerActivity.class, false);
             }
         });
     }

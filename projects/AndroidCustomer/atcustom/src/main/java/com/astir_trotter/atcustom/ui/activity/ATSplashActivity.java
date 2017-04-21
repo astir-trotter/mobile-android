@@ -43,11 +43,11 @@ public class ATSplashActivity extends ATBaseActivity {
     protected void onResume() {
         super.onResume();
 
-        if (getNextActivity() != null) {
+        if (getNextActivityClass() != null) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    transit(getNextActivity(), true);
+                    transit(getNextActivityClass(), true);
                 }
             }, getDelayDuration());
         }
@@ -67,7 +67,7 @@ public class ATSplashActivity extends ATBaseActivity {
     }
 
     @Nullable
-    protected Class<?> getNextActivity() {
+    protected Class<?> getNextActivityClass() {
         return null;
     }
 
