@@ -40,14 +40,6 @@ public class MultiLangStringRes {
 
     private MultiLangStringRes() {
         multiLangStringRes = new HashMap<>(Language.values().length);
-
-        getStringRes(Language.Korean)
-                .putRepeat(android.R.string.ok, "확인")
-                .putRepeat(android.R.string.cancel, "취소")
-                .putRepeat(android.R.string.yes, "예")
-                .putRepeat(android.R.string.no, "아니")
-                .putRepeat(R.string.crashreport_title, "오류발생")
-                .putRepeat(R.string.crashreport_description, "개발자에게로 오류내용을 전송하여 수정하겠습니까?");
     }
 
     public StringRes getStringRes(Language language) {
