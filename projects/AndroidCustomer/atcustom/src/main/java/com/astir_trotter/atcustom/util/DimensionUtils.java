@@ -3,7 +3,7 @@
  * @contact - yonis.larsson.biz@gmail.com
  * @date - 12/6/16
  */
-package com.astir_trotter.atcustom.utils;
+package com.astir_trotter.atcustom.util;
 
 import android.content.Context;
 import android.graphics.Point;

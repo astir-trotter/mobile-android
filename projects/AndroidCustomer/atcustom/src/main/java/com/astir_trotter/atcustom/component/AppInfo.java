@@ -1,11 +1,11 @@
-package com.astir_trotter.atcustom.global;
+package com.astir_trotter.atcustom.component;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
 import com.astir_trotter.atcustom.R;
-import com.astir_trotter.atcustom.utils.ResourceUtils;
+import com.astir_trotter.atcustom.util.ResourceUtils;
 
 /**
  * @author - Saori Sugiyama
@@ -13,8 +13,8 @@ import com.astir_trotter.atcustom.utils.ResourceUtils;
  * @date - 4/11/17
  */
 
-public class ATAppInfo {
-    private static final String TAG = ATAppInfo.class.getSimpleName();
+public class AppInfo {
+    private static final String TAG = AppInfo.class.getSimpleName();
 
     public String appName;
     public String orgName;
@@ -24,7 +24,7 @@ public class ATAppInfo {
     public String appDescription;
     public String copyright;
 
-    public ATAppInfo(Context context, String appName, String orgName, String appDescription, String copyright) {
+    public AppInfo(Context context, String appName, String orgName, String appDescription, String copyright) {
         this.appName = appName;
         this.orgName = orgName;
         this.appDescription = appDescription;
@@ -48,8 +48,8 @@ public class ATAppInfo {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static ATAppInfo getDefaultAppInfo(Context context) {
-        return new ATAppInfo(
+    public static AppInfo getDefaultAppInfo(Context context) {
+        return new AppInfo(
                 context,
                 ResourceUtils.getString(context, R.string.lib_name),        // app name
                 ResourceUtils.getString(context, R.string.org_name),        // org name

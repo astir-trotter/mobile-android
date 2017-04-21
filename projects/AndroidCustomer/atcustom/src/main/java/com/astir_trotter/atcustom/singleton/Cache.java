@@ -1,7 +1,9 @@
-package com.astir_trotter.atcustom.global;
+package com.astir_trotter.atcustom.singleton;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+
+import com.astir_trotter.atcustom.component.AppInfo;
 
 /**
  * @author - Saori Sugiyama
@@ -9,20 +11,20 @@ import android.support.annotation.NonNull;
  * @date - 4/11/17
  */
 
-public class ATCache {
-    private static final String TAG = ATCache.class.getSimpleName();
-    public static Class<?> sCacheClass = ATCache.class;
+public class Cache {
+    private static final String TAG = Cache.class.getSimpleName();
+    public static Class<?> sCacheClass = Cache.class;
 
-    private static ATCache _instance = null;
+    private static Cache _instance = null;
 
-    public static ATCache getInstance() {
+    public static Cache getInstance() {
         if (_instance == null) {
             try {
-                _instance = (ATCache) sCacheClass.newInstance();
+                _instance = (Cache) sCacheClass.newInstance();
             } catch (InstantiationException e) {
-                _instance = new ATCache();
+                _instance = new Cache();
             } catch (IllegalAccessException e) {
-                _instance = new ATCache();
+                _instance = new Cache();
             }
         }
 
@@ -32,7 +34,8 @@ public class ATCache {
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     private Context mContext;
-    private ATAppInfo mAppInfo;
+    private AppInfo mAppInfo;
+    private boolean mDebug;
 
     public void setContext(Context context) {
         this.mContext = context;
@@ -45,14 +48,22 @@ public class ATCache {
         return mContext;
     }
 
-    public void setAppInfo(@NonNull ATAppInfo appInfo) {
+    public void setAppInfo(@NonNull AppInfo appInfo) {
         mAppInfo = appInfo;
     }
 
-    public ATAppInfo getAppInfo() {
+    public AppInfo getAppInfo() {
         if (mAppInfo == null)
             throw new IllegalStateException("No app info registered yet.");
 
         return mAppInfo;
+    }
+
+    public boolean isDebug() {
+        return mDebug;
+    }
+
+    public void setDebug(boolean debug) {
+        this.mDebug = debug;
     }
 }

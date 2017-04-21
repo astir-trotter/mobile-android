@@ -4,7 +4,7 @@
  * @date - 12/2/16
  */
 
-package com.astir_trotter.atcustom.crashreport;
+package com.astir_trotter.atcustom.ui.activity.base;
 
 import android.app.Application;
 import android.content.Context;
@@ -14,9 +14,10 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
-import android.util.Log;
 
-import com.astir_trotter.atcustom.utils.TimeUtils;
+import com.astir_trotter.atcustom.ui.activity.CrashReporterActivity;
+import com.astir_trotter.atcustom.util.LogHelper;
+import com.astir_trotter.atcustom.util.TimeUtils;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -32,7 +33,6 @@ import java.util.HashMap;
 public class AutoCrashReporter implements Thread.UncaughtExceptionHandler {
 	private static final String TAG = AutoCrashReporter.class.getSimpleName();
 
-	private static final boolean DEBUGABLE = true;
 	private static String DEFAULT_EMAIL_SUBJECT = "New Crash Report Generated";
 
 	private String[] recipients;
@@ -76,7 +76,7 @@ public class AutoCrashReporter implements Thread.UncaughtExceptionHandler {
 
 	public void start() {
 		if(startAttempted) {
-			showLog("Already started");
+			LogHelper.log(TAG, "Already started");
 			return;
 		}
 //		previousHandler = Thread.getDefaultUncaughtExceptionHandler();
@@ -213,7 +213,7 @@ public class AutoCrashReporter implements Thread.UncaughtExceptionHandler {
 	}
 
 	public void uncaughtException(Thread t, Throwable e) {
-		showLog("====uncaughtException");
+		LogHelper.log(TAG, "====uncaughtException");
 
 		StringBuilder reportStringBuffer = new StringBuilder();
 		reportStringBuffer.append("Error Report collected on : ").append(new Date().toString());
@@ -242,7 +242,7 @@ public class AutoCrashReporter implements Thread.UncaughtExceptionHandler {
 		}
 		printWriter.close();
 		reportStringBuffer.append("\n\n**** End of current Report ***");
-		showLog("Report: "+reportStringBuffer.toString());
+		LogHelper.log(TAG, "Report: "+reportStringBuffer.toString());
 		saveAsFile(reportStringBuffer.toString());
 
 		Intent intent = new Intent(application, CrashReporterActivity.class);
@@ -257,8 +257,8 @@ public class AutoCrashReporter implements Thread.UncaughtExceptionHandler {
 
 
 
-	private void sendErrorMail(Context _context, String errorContent) {
-		showLog("====sendErrorMail");
+	private void sendErrorMail(Context context, String errorContent) {
+		LogHelper.log(TAG, "====sendErrorMail");
 		Intent sendIntent = new Intent(Intent.ACTION_SEND);
 		String subject = DEFAULT_EMAIL_SUBJECT;
 		String body = "\n\n" + errorContent + "\n\n";
@@ -268,11 +268,11 @@ public class AutoCrashReporter implements Thread.UncaughtExceptionHandler {
 		sendIntent.setType("message/rfc822");
 		//sendIntent.setType("text/html");
 		sendIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		_context.startActivity(Intent.createChooser(sendIntent, "Title:"));
+		context.startActivity(Intent.createChooser(sendIntent, "Title:"));
 	}
 
 	private void saveAsFile(String errorContent) {
-		showLog("====SaveAsFile");
+		LogHelper.log(TAG, "====SaveAsFile");
 		try {
 			String fileName = application.getPackageName() + "_" + TimeUtils.curTime() + ".stacktrace";
 			FileOutputStream fos = application.openFileOutput(fileName, Context.MODE_PRIVATE);
@@ -300,9 +300,9 @@ public class AutoCrashReporter implements Thread.UncaughtExceptionHandler {
 		return getErrorFileList().length > 0;
 	}
 
-	void checkErrorAndSendMail(Context _context) {
+	public void checkErrorAndSendMail(Context context) {
 		try {
-			filePath = _context.getFilesDir().getAbsolutePath();
+			filePath = context.getFilesDir().getAbsolutePath();
 			if (bIsThereAnyErrorFile()) {
 				StringBuilder wholeErrorTextSB = new StringBuilder();
 
@@ -326,15 +326,11 @@ public class AutoCrashReporter implements Thread.UncaughtExceptionHandler {
 					File curFile = new File(filePath + "/" + curString);
 					curFile.delete();
 				}
-				sendErrorMail(_context, wholeErrorTextSB.toString());
+				sendErrorMail(context, wholeErrorTextSB.toString());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	private void showLog(String msg){
-		if(DEBUGABLE) Log.i(TAG, msg);
 	}
 
 }

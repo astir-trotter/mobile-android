@@ -29,7 +29,7 @@ import android.widget.ImageView;
 import com.astir_trotter.atcustom.R;
 import com.astir_trotter.atcustom.ui.iconics.core.IconicsDrawable;
 import com.astir_trotter.atcustom.ui.iconics.core.typeface.IIcon;
-import com.astir_trotter.atcustom.utils.Convertor;
+import com.astir_trotter.atcustom.util.Convertor;
 
 @SuppressLint("AppCompatCustomView")
 public class IconicsImageView extends ImageView {

@@ -12,7 +12,7 @@
 
         <!-- Auto Crash Report-->
         <activity
-            android:name="com.astir_trotter.atcustom.crashreport.CrashReporterActivity"
+            android:name="com.astir_trotter.atcustom.ui.activity.CrashReporterActivity"
             android:theme="@style/AT.AutoCrashReportDialog"/>
 
 

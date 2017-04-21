@@ -57,7 +57,7 @@ import android.util.Log;
 
 import com.astir_trotter.atcustom.ui.iconics.core.typeface.IIcon;
 import com.astir_trotter.atcustom.ui.iconics.core.typeface.ITypeface;
-import com.astir_trotter.atcustom.utils.Convertor;
+import com.astir_trotter.atcustom.util.Convertor;
 
 import static android.support.annotation.Dimension.DP;
 import static android.support.annotation.Dimension.PX;

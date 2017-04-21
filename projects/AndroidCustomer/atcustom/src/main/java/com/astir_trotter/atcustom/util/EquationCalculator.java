@@ -1,8 +1,6 @@
-package com.astir_trotter.atcustom.utils;
+package com.astir_trotter.atcustom.util;
 
-import android.util.Log;
-
-import com.astir_trotter.atcustom.global.ATConstants;
+import com.astir_trotter.atcustom.component.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -264,7 +262,7 @@ public class EquationCalculator {
                     .trim();
 
             // check if short-format
-            Pattern shortFormat = Pattern.compile("^\\s*([+-]?(" + OPERAND + "))((\\s+[+-]?(" + OPERAND + "))*)\\s*$", ATConstants.PATTERN_FLAG);
+            Pattern shortFormat = Pattern.compile("^\\s*([+-]?(" + OPERAND + "))((\\s+[+-]?(" + OPERAND + "))*)\\s*$", Constants.PATTERN_FLAG);
             Matcher matcher = shortFormat.matcher(expression);
             if (matcher.matches()) {
                 do {
@@ -346,7 +344,7 @@ public class EquationCalculator {
      * Detect series of unaries,
      */
     private static int findUnariesEndIndex(String expression, int startIndex) {
-        Pattern pattern = Pattern.compile("^\\s*((" + UNARY + ")\\s*)*", ATConstants.PATTERN_FLAG);
+        Pattern pattern = Pattern.compile("^\\s*((" + UNARY + ")\\s*)*", Constants.PATTERN_FLAG);
         Matcher matcher = pattern.matcher(expression)
                 .region(startIndex, expression.length())
                 .useAnchoringBounds(true);
@@ -381,7 +379,7 @@ public class EquationCalculator {
         }
 
         // simple value
-        Pattern pattern = Pattern.compile("^\\s*(" + OPERAND + ")\\s*", ATConstants.PATTERN_FLAG);
+        Pattern pattern = Pattern.compile("^\\s*(" + OPERAND + ")\\s*", Constants.PATTERN_FLAG);
         Matcher matcher = pattern.matcher(expression)
                 .region(startIndex, expression.length())
                 .useAnchoringBounds(true);
@@ -395,7 +393,7 @@ public class EquationCalculator {
      * no spaces before / after.
      */
     private static int findOperatorEndIndex(String expression, int startIndex) {
-        Pattern pattern = Pattern.compile("^(" + OPERATOR + ")", ATConstants.PATTERN_FLAG);
+        Pattern pattern = Pattern.compile("^(" + OPERATOR + ")", Constants.PATTERN_FLAG);
         Matcher matcher = pattern.matcher(expression)
                 .region(startIndex, expression.length())
                 .useAnchoringBounds(true);
@@ -416,7 +414,7 @@ public class EquationCalculator {
         Matcher matcher;
 
         // dec
-        pattern = Pattern.compile("([+-]?)((" + OPERAND_DEC + ")\\$?|" + "\\$?(" + OPERAND_DEC + "))", ATConstants.PATTERN_FLAG);
+        pattern = Pattern.compile("([+-]?)((" + OPERAND_DEC + ")\\$?|" + "\\$?(" + OPERAND_DEC + "))", Constants.PATTERN_FLAG);
         if ((matcher = pattern.matcher(operand)).matches()) {
             String decStr = matcher.group(3) != null ? matcher.group(3) : matcher.group(4);
             value = Convertor.getFloat(decStr);
@@ -424,7 +422,7 @@ public class EquationCalculator {
         }
 
         // hex
-        pattern = Pattern.compile("([+-]?)(" + OPERAND_HEX + ")", ATConstants.PATTERN_FLAG);
+        pattern = Pattern.compile("([+-]?)(" + OPERAND_HEX + ")", Constants.PATTERN_FLAG);
         if (!isValid && (matcher = pattern.matcher(operand)).matches()) {
             String hexStr = matcher.group(2);
             if (hexStr.startsWith("0"))
@@ -436,7 +434,7 @@ public class EquationCalculator {
         }
 
         // oct
-        pattern = Pattern.compile("([+-]?)(" + OPERAND_OCT + ")", ATConstants.PATTERN_FLAG);
+        pattern = Pattern.compile("([+-]?)(" + OPERAND_OCT + ")", Constants.PATTERN_FLAG);
         if (!isValid && (matcher = pattern.matcher(operand)).matches()) {
             String octStr = matcher.group(2);
             if (octStr.startsWith("0"))
@@ -448,7 +446,7 @@ public class EquationCalculator {
         }
 
         // bin
-        pattern = Pattern.compile("([+-]?)(" + OPERAND_BIN + ")", ATConstants.PATTERN_FLAG);
+        pattern = Pattern.compile("([+-]?)(" + OPERAND_BIN + ")", Constants.PATTERN_FLAG);
         if (!isValid && (matcher = pattern.matcher(operand)).matches()) {
             String binStr = matcher.group(2);
             if (binStr.startsWith("0"))
@@ -471,7 +469,7 @@ public class EquationCalculator {
     private static List<Integer> getUnaries(String unariesString) {
         List<Integer> ret = new ArrayList<>();
 
-        Pattern pattern = Pattern.compile(UNARY, ATConstants.PATTERN_FLAG);
+        Pattern pattern = Pattern.compile(UNARY, Constants.PATTERN_FLAG);
         Matcher matcher = pattern.matcher(unariesString);
         int startIndex = 0;
         while (matcher.find(startIndex)) {
@@ -534,7 +532,7 @@ public class EquationCalculator {
             case CALC_OPERATION_DIV:
                 if (operand2 == 0) {
                     isError = true;
-                    Log.d(TAG, "Divide by zero.");
+                    LogHelper.log(TAG, "Divide by zero.");
                     ret = 0;
                 } else
                     ret = operand1 / operand2;

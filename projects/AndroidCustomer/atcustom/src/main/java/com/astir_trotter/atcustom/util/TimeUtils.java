@@ -3,7 +3,7 @@
  * @contact - yonis.larsson.biz@gmail.com
  * @date - 2/24/17
  */
-package com.astir_trotter.atcustom.utils;
+package com.astir_trotter.atcustom.util;
 
 import java.util.concurrent.TimeUnit;
 

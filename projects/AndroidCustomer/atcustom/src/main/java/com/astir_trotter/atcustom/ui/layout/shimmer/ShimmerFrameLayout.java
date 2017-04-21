@@ -14,14 +14,14 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 
 import com.astir_trotter.atcustom.R;
 import com.astir_trotter.atcustom.ui.layout.shimmer.internal.Mask;
 import com.astir_trotter.atcustom.ui.layout.shimmer.internal.MaskTranslation;
-import com.astir_trotter.atcustom.utils.ImageUtils;
+import com.astir_trotter.atcustom.util.ImageUtils;
+import com.astir_trotter.atcustom.util.LogHelper;
 
 public class ShimmerFrameLayout extends FrameLayout {
 
@@ -669,7 +669,7 @@ public class ShimmerFrameLayout extends FrameLayout {
                 logMessageStringBuilder.append("\n");
             }
             logMessage = logMessageStringBuilder.toString();
-            Log.d(TAG, logMessage);
+            LogHelper.log(TAG, logMessage);
         }
         return null;
     }

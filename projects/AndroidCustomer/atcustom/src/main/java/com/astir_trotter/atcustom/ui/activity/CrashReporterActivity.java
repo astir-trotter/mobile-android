@@ -4,7 +4,7 @@
  * @date - 12/2/16
  */
 
-package com.astir_trotter.atcustom.crashreport;
+package com.astir_trotter.atcustom.ui.activity;
 
 import android.app.Activity;
 import android.graphics.drawable.ColorDrawable;
@@ -15,8 +15,9 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.astir_trotter.atcustom.R;
+import com.astir_trotter.atcustom.ui.activity.base.AutoCrashReporter;
 
-public class CrashReporterActivity extends Activity implements View.OnClickListener{
+public class CrashReporterActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

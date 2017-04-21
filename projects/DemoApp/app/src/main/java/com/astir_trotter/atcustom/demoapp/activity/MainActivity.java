@@ -1,15 +1,14 @@
 package com.astir_trotter.atcustom.demoapp.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.astir_trotter.atcustom.demoapp.R;
-import com.astir_trotter.atcustom.ui.activity.ATBaseActivity;
+import com.astir_trotter.atcustom.ui.activity.BaseActivity;
 
-public class MainActivity extends ATBaseActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

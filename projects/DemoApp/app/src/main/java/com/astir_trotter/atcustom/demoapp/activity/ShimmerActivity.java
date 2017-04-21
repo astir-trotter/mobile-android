@@ -19,12 +19,12 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.astir_trotter.atcustom.demoapp.R;
-import com.astir_trotter.atcustom.ui.activity.ATBaseActivity;
+import com.astir_trotter.atcustom.ui.activity.BaseActivity;
 import com.astir_trotter.atcustom.ui.layout.shimmer.MaskAngle;
 import com.astir_trotter.atcustom.ui.layout.shimmer.MaskShape;
 import com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout;
 
-public class ShimmerActivity extends ATBaseActivity {
+public class ShimmerActivity extends BaseActivity {
 
   private ShimmerFrameLayout mShimmerViewContainer;
   private Button[] mPresetButtons;

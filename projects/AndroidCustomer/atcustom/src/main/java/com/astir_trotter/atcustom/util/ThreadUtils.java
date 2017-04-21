@@ -3,7 +3,7 @@
  * @contact - yonis.larsson.biz@gmail.com
  * @date - 3/3/17
  */
-package com.astir_trotter.atcustom.utils;
+package com.astir_trotter.atcustom.util;
 
 import android.os.Looper;
 import android.support.annotation.UiThread;

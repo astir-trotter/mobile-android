@@ -3,11 +3,11 @@
  * @contact - sugiyama.saori.biz@gmail.com
  * @date - 12/2/16
  */
-package com.astir_trotter.atcustom.utils;
+package com.astir_trotter.atcustom.util;
 
 import android.content.Context;
 
-import com.astir_trotter.atcustom.global.ATConstants;
+import com.astir_trotter.atcustom.component.Constants;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +16,7 @@ public class AssetsHelper {
     private static final String TAG = AssetsHelper.class.getSimpleName();
 
     public static String loadFromAsset(Context context, String filePathName) {
-        String fileContent = ATConstants.EMPTY_STRING;
+        String fileContent = Constants.EMPTY_STRING;
 
         try {
             InputStream is = context.getAssets().open(filePathName);

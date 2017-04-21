@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
-import com.astir_trotter.atcustom.utils.ViewUtils;
+import com.astir_trotter.atcustom.util.ViewUtils;
 
 /**
  * @author - Saori Sugiyama
@@ -13,8 +13,8 @@ import com.astir_trotter.atcustom.utils.ViewUtils;
  * @date - 4/20/17
  */
 
-public abstract class ATBaseActivity extends AppCompatActivity {
-    private static final String TAG = ATBaseActivity.class.getSimpleName();
+public abstract class BaseActivity extends AppCompatActivity {
+    private static final String TAG = BaseActivity.class.getSimpleName();
 
     private Handler mHandler;
 

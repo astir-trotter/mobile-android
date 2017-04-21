@@ -1,4 +1,4 @@
-package com.astir_trotter.atcustom.utils;
+package com.astir_trotter.atcustom.util;
 
 import android.graphics.Bitmap;
 

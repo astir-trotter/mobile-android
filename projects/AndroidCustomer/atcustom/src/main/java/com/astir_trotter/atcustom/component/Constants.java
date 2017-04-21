@@ -3,11 +3,11 @@
  * @contact - sugiyama.saori.biz@gmail.com
  * @date - 12/2/16
  */
-package com.astir_trotter.atcustom.global;
+package com.astir_trotter.atcustom.component;
 
 import java.util.regex.Pattern;
 
-public class ATConstants {
+public class Constants {
     public static final String EMPTY_STRING = "";
     public static final String CONDENSER = "\u2026";
 

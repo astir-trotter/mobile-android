@@ -7,13 +7,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.astir_trotter.atcustom.R;
-import com.astir_trotter.atcustom.global.ATAppInfo;
-import com.astir_trotter.atcustom.global.ATCache;
+import com.astir_trotter.atcustom.component.AppInfo;
+import com.astir_trotter.atcustom.singleton.Cache;
 
 import java.text.MessageFormat;
 
-public class ATSplashActivity extends ATBaseActivity {
-    private static final String TAG = ATSplashActivity.class.getSimpleName();
+public class SplashActivity extends BaseActivity {
+    private static final String TAG = SplashActivity.class.getSimpleName();
     private static final long DEFAULT_DELAY_DURATION = 5000;
 
     private Runnable mDelayedTransit;
@@ -29,7 +29,7 @@ public class ATSplashActivity extends ATBaseActivity {
         else {
             setContentView(R.layout.activity_splash);
 
-            ATAppInfo appInfo = ATCache.getInstance().getAppInfo();
+            AppInfo appInfo = Cache.getInstance().getAppInfo();
             String title = MessageFormat.format("{0} {1}_{2}", appInfo.appName, appInfo.versionName, appInfo.buildNumber);
             ((TextView) findViewById(R.id.app_name)).setText(title);
             ((TextView) findViewById(R.id.app_description)).setText(appInfo.appDescription);

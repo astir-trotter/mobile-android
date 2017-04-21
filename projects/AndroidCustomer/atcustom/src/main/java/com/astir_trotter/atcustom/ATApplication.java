@@ -3,10 +3,10 @@ package com.astir_trotter.atcustom;
 import android.app.Application;
 import android.support.annotation.NonNull;
 
-import com.astir_trotter.atcustom.crashreport.AutoCrashReporter;
-import com.astir_trotter.atcustom.global.ATAppInfo;
-import com.astir_trotter.atcustom.global.ATCache;
-import com.astir_trotter.atcustom.utils.ResourceUtils;
+import com.astir_trotter.atcustom.singleton.Cache;
+import com.astir_trotter.atcustom.ui.activity.base.AutoCrashReporter;
+import com.astir_trotter.atcustom.component.AppInfo;
+import com.astir_trotter.atcustom.util.ResourceUtils;
 
 /**
  * @author - Saori Sugiyama
@@ -21,18 +21,19 @@ public abstract class ATApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        if (isAutoCrashReportEnabled()) {
+        if (isDebug()) {
+            Cache.getInstance().setDebug(true);
             AutoCrashReporter.get(this)
                     .setEmailAddresses(getDeveloperEmailAddress())
                     .setEmailSubject(getSubjectForAutoCrashRepot())
                     .start();
         }
 
-        ATCache.getInstance().setContext(this);
-        ATCache.getInstance().setAppInfo(getAppInfo());
+        Cache.getInstance().setContext(this);
+        Cache.getInstance().setAppInfo(getAppInfo());
     }
 
-    protected boolean isAutoCrashReportEnabled() {
+    protected boolean isDebug() {
         return true;
     }
 
@@ -47,7 +48,7 @@ public abstract class ATApplication extends Application {
     }
 
     @NonNull
-    protected ATAppInfo getAppInfo() {
-        return ATAppInfo.getDefaultAppInfo(this);
+    protected AppInfo getAppInfo() {
+        return AppInfo.getDefaultAppInfo(this);
     }
 }

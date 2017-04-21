@@ -3,12 +3,11 @@
  * @contact - sugiyama.saori.biz@gmail.com
  * @date - 12/2/16
  */
-package com.astir_trotter.atcustom.utils;
+package com.astir_trotter.atcustom.util;
 
 import android.support.annotation.NonNull;
-import android.util.Log;
 
-import com.astir_trotter.atcustom.global.ATConstants;
+import com.astir_trotter.atcustom.component.Constants;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -20,7 +19,7 @@ public class TextUtils {
 
     private static String getNRepeatString(int n, String repetition) {
         if (n <= 0 || repetition.isEmpty())
-            return ATConstants.EMPTY_STRING;
+            return Constants.EMPTY_STRING;
 
         if (repetition.equals(" "))
             return String.format("%" + n + "s", repetition);
@@ -96,7 +95,7 @@ public class TextUtils {
                 else if (radix == 8) suf = "o";
                 else suf = "b";
             } else
-                suf = ATConstants.EMPTY_STRING;
+                suf = Constants.EMPTY_STRING;
 
             return Long.toString((long) d, radix) + suf;
         } else
@@ -136,7 +135,7 @@ public class TextUtils {
         try {
             return new String(data, offset, byteCount, charsetName);
         } catch (UnsupportedEncodingException e) {
-            Log.d(TAG, "**** An error occurs while decoding ****");
+            LogHelper.log(TAG, "**** An error occurs while decoding ****");
         }
 
         return null;
@@ -153,7 +152,7 @@ public class TextUtils {
                 ret.append(Integer.toHexString(digest >= 0 ? digest : -digest));
             return ret.toString();
         } catch (NoSuchAlgorithmException e) {
-            Log.d(TAG, "**** An error occurs while encoding ****");
+            LogHelper.log(TAG, "**** An error occurs while encoding ****");
         }
 
         return null;
