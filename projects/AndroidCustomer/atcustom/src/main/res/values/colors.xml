@@ -5,5 +5,4 @@
     <color name="colorAccent">#4092ff</color>
     <color name="textColorPrimary">@android:color/white</color>
     <color name="windowBackground">@android:color/white</color>
-    <color name="accent_material_light">#ff4062</color>
 </resources>
