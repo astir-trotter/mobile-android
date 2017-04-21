@@ -22,8 +22,6 @@ public class ATSplashActivity extends ATBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        fullscreen();
-
         if (getContentView() != null)
             setContentView(getContentView());
         else if (getContentLayout() != 0)
@@ -52,6 +50,8 @@ public class ATSplashActivity extends ATBaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        fullscreen();
 
         if (getNextActivityClass() != null) {
             mDelayedTransit = new Runnable() {

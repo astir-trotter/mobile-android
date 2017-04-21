@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Astir Trotter Serif -->
+
+    <style name="AT.Text.Serif" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="AT.Text.Serif.Tiny" parent="AT.Text.Serif">
+        <item name="android:textSize">@dimen/textsize_tiny</item>
+    </style>
+
+    <style name="AT.Text.Serif.Small" parent="AT.Text.Serif">
+        <item name="android:textSize">@dimen/textsize_small</item>
+    </style>
+
+    <style name="AT.Text.Serif.Normal" parent="AT.Text.Serif">
+        <item name="android:textSize">@dimen/textsize_normal</item>
+    </style>
+
+    <style name="AT.Text.Serif.Large" parent="AT.Text.Serif">
+        <item name="android:textSize">@dimen/textsize_large</item>
+    </style>
+
+    <style name="AT.Text.Serif.Title" parent="AT.Text.Serif">
+        <item name="android:textSize">@dimen/textsize_title</item>
+    </style>
+
+    <style name="AT.Text.Serif.Subtitle" parent="AT.Text.Serif">
+        <item name="android:textSize">@dimen/textsize_subtitle</item>
+    </style>
+
+
+
+    <!-- Astir Trotter Serif Thin -->
+
+    <style name="AT.Text.Serif_Thin" parent="AT.Text.Serif">
+        <item name="android:fontFamily">sans-serif-thin</item>
+    </style>
+
+    <style name="AT.Text.Serif_Thin.Tiny" parent="AT.Text.Serif_Thin">
+        <item name="android:textSize">@dimen/textsize_tiny</item>
+    </style>
+
+    <style name="AT.Text.Serif_Thin.Small" parent="AT.Text.Serif_Thin">
+        <item name="android:textSize">@dimen/textsize_small</item>
+    </style>
+
+    <style name="AT.Text.Serif_Thin.Normal" parent="AT.Text.Serif_Thin">
+        <item name="android:textSize">@dimen/textsize_normal</item>
+    </style>
+
+    <style name="AT.Text.Serif_Thin.Large" parent="AT.Text.Serif_Thin">
+        <item name="android:textSize">@dimen/textsize_large</item>
+    </style>
+
+    <style name="AT.Text.Serif_Thin.Title" parent="AT.Text.Serif_Thin">
+        <item name="android:textSize">@dimen/textsize_title</item>
+    </style>
+
+    <style name="AT.Text.Serif_Thin.Subtitle" parent="AT.Text.Serif_Thin">
+        <item name="android:textSize">@dimen/textsize_subtitle</item>
+    </style>
+
+</resources>

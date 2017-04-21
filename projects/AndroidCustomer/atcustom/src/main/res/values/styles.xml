@@ -17,42 +17,4 @@
 
     <style name="AT.AutoCrashReportDialog" parent="@android:style/Theme.Dialog" />
 
-    <style name="AT.Button" parent="AT.Text.Serif.Normal">
-        <item name="android:background">?android:selectableItemBackground</item>
-    </style>
-
-    <style name="AT.Text.Serif" parent="@android:style/TextAppearance">
-        <item name="android:fontFamily">sans-serif</item>
-    </style>
-
-    <style name="AT.Text.Serif_Thin" parent="AT.Text.Serif">
-        <item name="android:fontFamily">sans-serif-thin</item>
-    </style>
-
-    <style name="AT.Text.Serif.Tiny" parent="AT.Text.Serif_Thin">
-        <item name="android:textSize">@dimen/textsize_tiny</item>
-    </style>
-
-    <style name="AT.Text.Serif.Small" parent="AT.Text.Serif_Thin">
-        <item name="android:textSize">@dimen/textsize_small</item>
-    </style>
-
-    <style name="AT.Text.Serif.Normal" parent="AT.Text.Serif">
-        <item name="android:textSize">@dimen/textsize_normal</item>
-    </style>
-
-    <style name="AT.Text.Serif.Large" parent="AT.Text.Serif">
-        <item name="android:textSize">@dimen/textsize_large</item>
-    </style>
-
-    <style name="AT.Text.Serif.Title" parent="AT.Text.Serif">
-        <item name="android:textSize">@dimen/textsize_title</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="AT.Text.Serif.Subtitle" parent="AT.Text.Serif">
-        <item name="android:textSize">@dimen/textsize_subtitle</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
 </resources>

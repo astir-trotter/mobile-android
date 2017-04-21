@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AT.Button" parent="AT.Text.Serif.Normal">
+        <item name="android:background">?android:selectableItemBackground</item>
+    </style>
+
+</resources>
