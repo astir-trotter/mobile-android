@@ -14,7 +14,7 @@ import java.text.MessageFormat;
 
 public class SplashActivity extends BaseActivity {
     private static final String TAG = SplashActivity.class.getSimpleName();
-    private static final long DEFAULT_DELAY_DURATION = 1000;        // TESTCODE
+    private static final long DEFAULT_DELAY_DURATION = 5000;
 
     private Runnable mDelayedTransit;
 
@@ -65,6 +65,14 @@ public class SplashActivity extends BaseActivity {
             mDelayedTransit = null;
     }
 
+    @Override
+    protected void representLanguage() {
+        if (getContentView() == null &&
+                getContentLayout() == 0) {
+
+        }
+    }
+
     private void transit() {
         assert getNextActivityClass() != null;
         transit(getNextActivityClass(), true);
@@ -91,4 +99,5 @@ public class SplashActivity extends BaseActivity {
     protected long getDelayDuration() {
         return DEFAULT_DELAY_DURATION;
     }
+
 }

@@ -10,11 +10,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.astir_trotter.atcustom.demoapp.R;
 import com.astir_trotter.atcustom.demoapp.demo.adapter.QuestionsAdapter;
 import com.astir_trotter.atcustom.demoapp.demo.model.Question;
 import com.astir_trotter.atcustom.demoapp.demo.model.Tag;
+import com.astir_trotter.atcustom.singleton.MultiLangStringRes;
 import com.astir_trotter.atcustom.ui.activity.BaseActivity;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
@@ -43,6 +45,8 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ((TextView) findViewById(R.id.actionbar_title)).setText(MultiLangStringRes.getInstance().get(R.string.app_name));
 
         ImagePipelineConfig config = ImagePipelineConfig
                 .newBuilder(this)
@@ -180,7 +184,12 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
 
     }
 
-    class Adapter extends FilterAdapter<Tag> {
+    @Override
+    protected void representLanguage() {
+
+    }
+
+    private class Adapter extends FilterAdapter<Tag> {
 
         Adapter(@NonNull List<? extends Tag> items) {
             super(items);

@@ -60,7 +60,7 @@ public abstract class ATApplication extends Application {
     }
 
     protected void initMultiLangStringRes() {
-        Cache.getInstance().setLanguage(Language.Korean);
+        Cache.getInstance().setLanguage(Language.English);
 
         MultiLangStringRes.getInstance().getStringRes(Language.Korean)
                 .putRepeat(android.R.string.ok, "확인")

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="AT.Text.ActionBar.Title" parent="AT.Text.Serif.Large">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <!-- Astir Trotter Serif -->
 
     <style name="AT.Text.Serif" parent="@android:style/TextAppearance">

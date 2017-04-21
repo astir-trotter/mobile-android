@@ -44,4 +44,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void fullscreen() {
         ViewUtils.makeFullScreen(getWindow());
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        representLanguage();
+    }
+
+    protected abstract void representLanguage();
 }
