@@ -40,7 +40,7 @@ public class Cache {
     private Language mLanguage;
 
     private Cache() {
-        mLanguage = Language.Korean;
+        mLanguage = Language.English;
     }
 
     public void setContext(Context context) {

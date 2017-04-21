@@ -23,6 +23,14 @@ public abstract class ATApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        // set base app info
+        Cache.getInstance().setContext(this);
+        Cache.getInstance().setAppInfo(getAppInfo());
+
+        // initializae language info - string res
+        initMultiLangStringRes();
+
+        // if debug mode, start auto crash reporter.
         if (isDebug()) {
             Cache.getInstance().setDebug(true);
             AutoCrashReporter.get(this)
@@ -31,8 +39,6 @@ public abstract class ATApplication extends Application {
                     .start();
         }
 
-        Cache.getInstance().setContext(this);
-        Cache.getInstance().setAppInfo(getAppInfo());
     }
 
     protected boolean isDebug() {
@@ -46,7 +52,7 @@ public abstract class ATApplication extends Application {
 
     @NonNull
     protected String getSubjectForAutoCrashRepot() {
-        return ResourceUtils.getString(this, R.string.crashreport_title);
+        return MultiLangStringRes.getInstance().get(R.string.crashreport_title);
     }
 
     @NonNull
@@ -55,6 +61,8 @@ public abstract class ATApplication extends Application {
     }
 
     protected void initMultiLangStringRes() {
+        Cache.getInstance().setLanguage(Language.Korean);
+
         MultiLangStringRes.getInstance().getStringRes(Language.Korean)
                 .putRepeat(android.R.string.ok, "확인")
                 .putRepeat(android.R.string.cancel, "취소")
