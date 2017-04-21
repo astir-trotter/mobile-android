@@ -5,13 +5,14 @@
  */
 package com.astir_trotter.atcustom.utils;
 
+import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Point;
 import android.graphics.PointF;
-import android.graphics.Rect;
 import android.support.annotation.NonNull;
-import android.view.View;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.util.TypedValue;
 
 public class DimensionUtils {
 
@@ -51,6 +52,26 @@ public class DimensionUtils {
             result = context.getResources().getDimensionPixelSize(resourceId);
         }
         return result;
+    }
+
+    private final static TypedValue tv = new TypedValue();
+    public static int getActionBarHeight(@NonNull Activity activity) {
+        if (activity instanceof AppCompatActivity) {
+            ActionBar actionBar = ((AppCompatActivity) activity).getSupportActionBar();
+            if (actionBar != null && actionBar.getHeight() != 0)
+                return actionBar.getHeight();
+        }
+
+        int actionBarHeight = 0;
+        if (activity.getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+            actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,
+                    activity.getResources().getDisplayMetrics());
+        } else if (activity.getTheme().resolveAttribute( android.support.v7.appcompat.R.attr.actionBarSize, tv, true)) {
+            actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,
+                    activity.getResources().getDisplayMetrics());
+        }
+
+        return actionBarHeight;
     }
 
 }

@@ -10,7 +10,6 @@ import android.widget.TextView;
 import com.astir_trotter.atcustom.R;
 import com.astir_trotter.atcustom.global.ATAppInfo;
 import com.astir_trotter.atcustom.global.ATCache;
-import com.astir_trotter.atcustom.utils.ViewUtils;
 
 import java.text.MessageFormat;
 

@@ -7,7 +7,6 @@
         <item name="windowNoTitle">true</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
         <item name="android:windowBackground">@color/windowBackground</item>
     </style>
@@ -23,10 +22,18 @@
     </style>
 
     <style name="AT.Text.Serif" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="AT.Text.Serif_Thin" parent="AT.Text.Serif">
         <item name="android:fontFamily">sans-serif-thin</item>
     </style>
 
-    <style name="AT.Text.Serif.Small" parent="AT.Text.Serif">
+    <style name="AT.Text.Serif.Tiny" parent="AT.Text.Serif_Thin">
+        <item name="android:textSize">@dimen/textsize_tiny</item>
+    </style>
+
+    <style name="AT.Text.Serif.Small" parent="AT.Text.Serif_Thin">
         <item name="android:textSize">@dimen/textsize_small</item>
     </style>
 
