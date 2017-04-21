@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.astir_trotter.atcustom.component.AppInfo;
+import com.astir_trotter.atcustom.singleton.base.Language;
 
 /**
  * @author - Saori Sugiyama
@@ -33,9 +34,14 @@ public class Cache {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
+    private boolean mDebug;
     private Context mContext;
     private AppInfo mAppInfo;
-    private boolean mDebug;
+    private Language mLanguage;
+
+    private Cache() {
+        mLanguage = Language.English;
+    }
 
     public void setContext(Context context) {
         this.mContext = context;
@@ -65,5 +71,13 @@ public class Cache {
 
     public void setDebug(boolean debug) {
         this.mDebug = debug;
+    }
+
+    public Language getLanguage() {
+        return mLanguage;
+    }
+
+    public void setLanguage(Language language) {
+        this.mLanguage = language;
     }
 }

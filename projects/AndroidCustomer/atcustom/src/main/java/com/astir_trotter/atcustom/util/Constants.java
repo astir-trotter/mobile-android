@@ -3,7 +3,7 @@
  * @contact - sugiyama.saori.biz@gmail.com
  * @date - 12/2/16
  */
-package com.astir_trotter.atcustom.component;
+package com.astir_trotter.atcustom.util;
 
 import java.util.regex.Pattern;
 

@@ -1,7 +1,5 @@
 package com.astir_trotter.atcustom.util;
 
-import com.astir_trotter.atcustom.component.Constants;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;

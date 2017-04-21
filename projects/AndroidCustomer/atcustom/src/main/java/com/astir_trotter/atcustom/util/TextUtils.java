@@ -7,8 +7,6 @@ package com.astir_trotter.atcustom.util;
 
 import android.support.annotation.NonNull;
 
-import com.astir_trotter.atcustom.component.Constants;
-
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
