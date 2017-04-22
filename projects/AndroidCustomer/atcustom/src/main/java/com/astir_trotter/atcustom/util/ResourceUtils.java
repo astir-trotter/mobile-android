@@ -34,6 +34,10 @@ public class ResourceUtils {
         return Cache.getInstance().getContext().getResources().getInteger(resId);
     }
 
+    public static int[] getIntegers(@ArrayRes int resId) {
+        return Cache.getInstance().getContext().getResources().getIntArray(resId);
+    }
+
     public static boolean getBool(@BoolRes int resId) {
         return Cache.getInstance().getContext().getResources().getBoolean(resId);
     }
@@ -46,7 +50,7 @@ public class ResourceUtils {
     }
 
     public static int[] getColors(@ArrayRes int resId) {
-        return Cache.getInstance().getContext().getResources().getIntArray(resId);
+        return getIntegers(resId);
     }
 
     public static int getDimension(Context context, @DimenRes int resId) {

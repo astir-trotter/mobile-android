@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.astir_trotter.atcustom.component.AppInfo;
-import com.astir_trotter.atcustom.singleton.base.Language;
+import com.astir_trotter.atcustom.singleton.lang.base.Language;
 
 /**
  * @author - Saori Sugiyama

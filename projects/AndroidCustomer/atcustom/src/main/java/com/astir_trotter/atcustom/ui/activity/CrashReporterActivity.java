@@ -15,7 +15,7 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.astir_trotter.atcustom.R;
-import com.astir_trotter.atcustom.singleton.MultiLangStringRes;
+import com.astir_trotter.atcustom.singleton.lang.MultiLangStringRes;
 import com.astir_trotter.atcustom.ui.activity.base.AutoCrashReporter;
 
 // Do not use BaseActivity nor AppCompatActivity

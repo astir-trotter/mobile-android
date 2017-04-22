@@ -5,10 +5,9 @@ import android.support.annotation.NonNull;
 
 import com.astir_trotter.atcustom.component.AppInfo;
 import com.astir_trotter.atcustom.singleton.Cache;
-import com.astir_trotter.atcustom.singleton.MultiLangStringRes;
-import com.astir_trotter.atcustom.singleton.base.Language;
+import com.astir_trotter.atcustom.singleton.lang.MultiLangStringRes;
+import com.astir_trotter.atcustom.singleton.lang.base.Language;
 import com.astir_trotter.atcustom.ui.activity.base.AutoCrashReporter;
-import com.astir_trotter.atcustom.util.ResourceUtils;
 
 /**
  * @author - Saori Sugiyama
@@ -29,6 +28,9 @@ public abstract class ATApplication extends Application {
 
         // initializae language info - string res
         initMultiLangStringRes();
+
+        // initializae language info - string res
+        initMultiThemeColorRes();
 
         // if debug mode, start auto crash reporter.
         if (isDebug()) {
@@ -70,4 +72,8 @@ public abstract class ATApplication extends Application {
                 .putRepeat(R.string.crashreport_title, "오류발생")
                 .putRepeat(R.string.crashreport_description, "개발자에게로 오류내용을 전송하여 수정하겠습니까?");
     }
+
+    protected void initMultiThemeColorRes() {
+    }
+
 }
