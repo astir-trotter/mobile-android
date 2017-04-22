@@ -1,23 +1,21 @@
 package com.astir_trotter.atcustom.demoapp.activity;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.TextView;
 
 import com.astir_trotter.atcustom.demoapp.R;
 import com.astir_trotter.atcustom.demoapp.demo.adapter.QuestionsAdapter;
 import com.astir_trotter.atcustom.demoapp.demo.model.Question;
 import com.astir_trotter.atcustom.demoapp.demo.model.Tag;
-import com.astir_trotter.atcustom.singleton.MultiLangStringRes;
+import com.astir_trotter.atcustom.singleton.lang.MultiLangStringRes;
 import com.astir_trotter.atcustom.ui.activity.BaseActivity;
+import com.astir_trotter.atcustom.util.ResourceUtils;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.yalantis.filter.adapter.FilterAdapter;
@@ -54,8 +52,8 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
                 .build();
         Fresco.initialize(this, config);
 
-        mColors = getResources().getIntArray(R.array.colors);
-        mTitles = getResources().getStringArray(R.array.job_titles);
+        mColors = ResourceUtils.getColors(R.array.colors);
+        mTitles = ResourceUtils.getStrings(R.array.job_titles);
 
         mFilter = (Filter<Tag>) findViewById(R.id.filter);
         mFilter.setAdapter(new Adapter(getTags()));
