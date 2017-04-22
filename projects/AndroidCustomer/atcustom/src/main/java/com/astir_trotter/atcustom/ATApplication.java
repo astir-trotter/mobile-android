@@ -61,9 +61,11 @@ public abstract class ATApplication extends Application {
         return AppInfo.getDefaultAppInfo(this);
     }
 
+    /**
+     * Initialize language info.
+     * Create languages and register string res according to its language.
+     */
     protected void initMultiLangStringRes() {
-        Cache.getInstance().setLanguage(Language.English);
-
         MultiLangStringRes.getInstance().getStringRes(Language.Korean)
                 .putRepeat(android.R.string.ok, "확인")
                 .putRepeat(android.R.string.cancel, "취소")
@@ -73,7 +75,12 @@ public abstract class ATApplication extends Application {
                 .putRepeat(R.string.crashreport_description, "개발자에게로 오류내용을 전송하여 수정하겠습니까?");
     }
 
+    /**
+     * Initialize theme info.
+     * Create themes and register color res according to its theme.
+     */
     protected void initMultiThemeColorRes() {
+        
     }
 
 }

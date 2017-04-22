@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import com.astir_trotter.atcustom.singleton.Cache;
 import com.astir_trotter.atcustom.singleton.lang.base.Language;
 import com.astir_trotter.atcustom.singleton.lang.base.StringRes;
+import com.astir_trotter.atcustom.util.LogHelper;
 import com.astir_trotter.atcustom.util.ResourceUtils;
 
 import java.util.HashMap;
@@ -53,6 +54,7 @@ public class MultiLangStringRes {
             try {
                 ret = ResourceUtils.getString(id);
             } catch (Resources.NotFoundException ignored) {
+                LogHelper.log(TAG, "No resource registered. id = " + id);
             }
         }
 
@@ -66,6 +68,7 @@ public class MultiLangStringRes {
             try {
                 ret = ResourceUtils.getStrings(id);
             } catch (Resources.NotFoundException ignored) {
+                LogHelper.log(TAG, "No resource registered. id = " + id);
             }
         }
 

@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 
 import com.astir_trotter.atcustom.component.AppInfo;
 import com.astir_trotter.atcustom.singleton.lang.base.Language;
+import com.astir_trotter.atcustom.singleton.theme.base.Theme;
 
 /**
  * @author - Saori Sugiyama
@@ -38,9 +39,11 @@ public class Cache {
     private Context mContext;
     private AppInfo mAppInfo;
     private Language mLanguage;
+    private Theme mTheme;
 
     private Cache() {
         mLanguage = Language.English;
+        mTheme = Theme.Light;
     }
 
     public void setContext(Context context) {
@@ -79,5 +82,13 @@ public class Cache {
 
     public void setLanguage(Language language) {
         this.mLanguage = language;
+    }
+
+    public Theme getTheme() {
+        return mTheme;
+    }
+
+    public void setTheme(Theme theme) {
+        this.mTheme = theme;
     }
 }
