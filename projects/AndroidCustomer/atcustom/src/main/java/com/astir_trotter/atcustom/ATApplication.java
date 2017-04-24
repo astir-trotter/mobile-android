@@ -80,7 +80,7 @@ public abstract class ATApplication extends Application {
      * Create themes and register color res according to its theme.
      */
     protected void initMultiThemeColorRes() {
-        
+
     }
 
 }

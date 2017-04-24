@@ -70,6 +70,11 @@ public class ShimmerActivity extends BaseActivity {
     }
 
     @Override
+    protected void representTheme() {
+
+    }
+
+    @Override
     protected void representLanguage() {
 
     }

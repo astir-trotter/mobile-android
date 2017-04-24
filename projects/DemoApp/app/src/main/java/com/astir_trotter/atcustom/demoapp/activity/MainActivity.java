@@ -183,6 +183,11 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
     }
 
     @Override
+    protected void representTheme() {
+
+    }
+
+    @Override
     protected void representLanguage() {
 
     }

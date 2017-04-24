@@ -66,6 +66,11 @@ public class SplashActivity extends BaseActivity {
     }
 
     @Override
+    protected void representTheme() {
+
+    }
+
+    @Override
     protected void representLanguage() {
         if (getContentView() == null &&
                 getContentLayout() == 0) {
