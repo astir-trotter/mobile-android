@@ -11,23 +11,11 @@
         android:layout_height="20dp"
         android:background="#E4E6E3" />
 
-    <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/avatar"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/dividerTop"
-        android:layout_margin="16dp"
-        fresco:actualImageScaleType="focusCrop"
-        fresco:roundAsCircle="true"
-        fresco:roundWithOverlayColor="@android:color/white" />
-
     <TextView
         android:id="@+id/text_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/avatar"
         android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/avatar"
         android:layout_toLeftOf="@+id/text_date"
         android:layout_toStartOf="@+id/text_date"
         android:text="Carol Bell"
@@ -59,7 +47,6 @@
         android:id="@+id/filter_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/avatar"
         android:layout_marginLeft="16dp"
         android:padding="10dp"
         android:textColor="@android:color/white" />

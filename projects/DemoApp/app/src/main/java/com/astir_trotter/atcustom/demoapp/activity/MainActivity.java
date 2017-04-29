@@ -16,8 +16,6 @@ import com.astir_trotter.atcustom.demoapp.demo.model.Tag;
 import com.astir_trotter.atcustom.singleton.lang.MultiLangStringRes;
 import com.astir_trotter.atcustom.ui.activity.BaseActivity;
 import com.astir_trotter.atcustom.util.ResourceUtils;
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.yalantis.filter.adapter.FilterAdapter;
 import com.yalantis.filter.animator.FiltersListItemAnimator;
 import com.yalantis.filter.listener.FilterListener;
@@ -45,12 +43,6 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
         setSupportActionBar(toolbar);
 
         ((TextView) findViewById(R.id.actionbar_title)).setText(MultiLangStringRes.getInstance().get(R.string.app_name));
-
-        ImagePipelineConfig config = ImagePipelineConfig
-                .newBuilder(this)
-                .setDownsampleEnabled(true)
-                .build();
-        Fresco.initialize(this, config);
 
         mColors = ResourceUtils.getColors(R.array.colors);
         mTitles = ResourceUtils.getStrings(R.array.job_titles);

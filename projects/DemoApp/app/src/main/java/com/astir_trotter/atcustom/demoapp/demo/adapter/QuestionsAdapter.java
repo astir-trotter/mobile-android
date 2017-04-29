@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.astir_trotter.atcustom.demoapp.R;
 import com.astir_trotter.atcustom.demoapp.demo.model.Question;
 import com.astir_trotter.atcustom.demoapp.demo.model.Tag;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
@@ -43,7 +42,6 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         Question question = mQuestions.get(position);
 
-        holder.avatar.setImageURI(question.getAuthorAvatar());
         holder.textAuthorName.setText(question.getAuthorName());
         holder.textJobTitle.setText(question.getAuthorJobTitle());
         holder.textDate.setText(question.getDate());
@@ -80,7 +78,6 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.View
         TextView textQuestion;
         TextView firstFilter;
         TextView secondFilter;
-        SimpleDraweeView avatar;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -91,7 +88,6 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.View
             textQuestion = (TextView) itemView.findViewById(R.id.text_question);
             firstFilter = (TextView) itemView.findViewById(R.id.filter_first);
             secondFilter = (TextView) itemView.findViewById(R.id.filter_second);
-            avatar = (SimpleDraweeView) itemView.findViewById(R.id.avatar);
         }
     }
 }
