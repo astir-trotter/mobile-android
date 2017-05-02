@@ -15,6 +15,7 @@ import android.support.annotation.DimenRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IntegerRes;
 import android.support.annotation.StringRes;
+import android.support.v4.content.ContextCompat;
 
 import com.astir_trotter.atcustom.singleton.Cache;
 
@@ -43,10 +44,7 @@ public class ResourceUtils {
     }
 
     public static int getColor(@ColorRes int resId) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            return Cache.getInstance().getContext().getColor(resId);
-        else
-            return Cache.getInstance().getContext().getResources().getColor(resId);
+        return ContextCompat.getColor(Cache.getInstance().getContext(), resId);
     }
 
     public static int[] getColors(@ArrayRes int resId) {
