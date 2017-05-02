@@ -30,6 +30,16 @@
                     android:src="@drawable/ic_alarm"
                     android:tint="@android:color/white" />
 
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/main_tb_icon_right"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_search"
+                    android:tint="@android:color/white" />
+
                 <TextView
                     android:id="@+id/actionbar_title"
                     android:layout_width="wrap_content"
@@ -40,16 +50,6 @@
                     android:text="@string/app_name"
                     android:gravity="center"
                     style="@style/AT.Text.ActionBar.Title"/>
-
-                <android.support.v7.widget.AppCompatImageView
-                    android:id="@+id/main_tb_icon_right"
-                    android:layout_width="@dimen/icon_size"
-                    android:layout_height="@dimen/icon_size"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_search"
-                    android:tint="@android:color/white" />
 
             </RelativeLayout>
 
