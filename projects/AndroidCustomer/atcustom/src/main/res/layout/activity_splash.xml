@@ -67,7 +67,7 @@
                 android:id="@+id/org_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="@dimen/size_xbit"
                 android:text="ORG_NAME"
                 android:textStyle="bold"
                 style="@style/AT.Text.Serif.Small"/>

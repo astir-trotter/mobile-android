@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="size_bit">2dp</dimen>
+    <dimen name="size_xbit">4dp</dimen>
+    <dimen name="size_tiny">8dp</dimen>
+    <dimen name="size_small">16dp</dimen>
+    <dimen name="size_normal">24dp</dimen>
+    <dimen name="size_large">36dp</dimen>
+    <dimen name="size_hlarge">48dp</dimen>
+    <dimen name="size_xlarge">72dp</dimen>
+    <dimen name="size_xxlarge">144dp</dimen>
+
     <dimen name="textsize_tiny">10sp</dimen>
     <dimen name="textsize_small">15sp</dimen>
     <dimen name="textsize_normal">18sp</dimen>
     <dimen name="textsize_large">23sp</dimen>
+
     <dimen name="textsize_title">30sp</dimen>
     <dimen name="textsize_subtitle">@dimen/textsize_large</dimen>
+    <dimen name="textsize_description">@dimen/textsize_normal</dimen>
 </resources>
