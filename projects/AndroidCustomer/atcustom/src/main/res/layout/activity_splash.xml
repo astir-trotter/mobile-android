@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.percent.PercentRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:shimmer="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:weightSum="13.5"
-    android:gravity="center_horizontal"
     android:theme="@style/AT.App">
 
     <com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout
+        android:id="@+id/splash_title"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:layout_marginTopPercent="30%"
         shimmer:auto_start="true"
         shimmer:repeat_mode="reverse"
         shimmer:base_alpha="0.7"
@@ -21,22 +22,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/app_name"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="5"
+                android:layout_height="wrap_content"
                 android:gravity="bottom"
                 android:text="APP_NAME VERSION"
                 style="@style/AT.Text.Serif.Title"/>
             <TextView
                 android:id="@+id/app_description"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_small"
                 android:gravity="bottom"
                 android:text="APP_DESCRIPTION"
                 style="@style/AT.Text.Serif.Subtitle"/>
@@ -46,16 +46,17 @@
 
     <com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:layout_marginBottomPercent="10%"
         shimmer:auto_start="true"
         shimmer:repeat_mode="reverse"
         shimmer:base_alpha="0.4">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="bottom"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/copyright"
@@ -75,4 +76,4 @@
 
     </com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout>
 
-</LinearLayout>
+</android.support.percent.PercentRelativeLayout>
