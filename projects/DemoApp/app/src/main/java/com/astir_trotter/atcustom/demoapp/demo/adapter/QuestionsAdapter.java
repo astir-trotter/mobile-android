@@ -61,10 +61,6 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.View
         holder.secondFilter.setBackgroundDrawable(drawable1);
     }
 
-    private int getColor(int color) {
-        return ContextCompat.getColor(mContext, color);
-    }
-
     @Override
     public int getItemCount() {
         return mQuestions.size();

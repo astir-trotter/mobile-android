@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/DemoApp.iml" filepath="$PROJECT_DIR$/DemoApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/../AndroidCustomer/atcustom/atcustom.iml" filepath="$PROJECT_DIR$/../AndroidCustomer/atcustom/atcustom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../AndroidCustomer/extlib/extlib.iml" filepath="$PROJECT_DIR$/../AndroidCustomer/extlib/extlib.iml" />
     </modules>
   </component>
 </project>
