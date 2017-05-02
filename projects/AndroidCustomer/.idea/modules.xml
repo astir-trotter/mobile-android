@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidCustomer.iml" filepath="$PROJECT_DIR$/AndroidCustomer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidCustomer.iml" filepath="$PROJECT_DIR$/AndroidCustomer.iml" />
       <module fileurl="file://$PROJECT_DIR$/atcustom/atcustom.iml" filepath="$PROJECT_DIR$/atcustom/atcustom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/extlib/extlib.iml" filepath="$PROJECT_DIR$/extlib/extlib.iml" />
     </modules>
   </component>
 </project>
