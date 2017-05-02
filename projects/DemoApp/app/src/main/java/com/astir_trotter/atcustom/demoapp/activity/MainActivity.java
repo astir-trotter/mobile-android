@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.main_tb);
         setSupportActionBar(toolbar);
 
         ((TextView) findViewById(R.id.actionbar_title)).setText(MultiLangStringRes.getInstance().get(R.string.app_name));
@@ -47,7 +47,7 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
         mColors = ResourceUtils.getColors(R.array.colors);
         mTitles = ResourceUtils.getStrings(R.array.job_titles);
 
-        mFilter = (Filter<Tag>) findViewById(R.id.filter);
+        mFilter = (Filter<Tag>) findViewById(R.id.main_list_filter);
         mFilter.setAdapter(new Adapter(getTags()));
         mFilter.setListener(this);
 
@@ -56,7 +56,7 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
         mFilter.build();
 
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.list);
+        mRecyclerView = (RecyclerView) findViewById(R.id.main_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(mAdapter = new QuestionsAdapter(this, mAllQuestions = getQuestions()));
         mRecyclerView.setItemAnimator(new FiltersListItemAnimator());
