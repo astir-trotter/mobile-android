@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <!-- divider -->
+    <View
+        android:id="@+id/main_demoitem_dividerTop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_xbit"
+        android:background="#E4E6E3"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_tiny">
+
+        <!-- image -->
+        <View
+            android:id="@+id/main_demoitem_image"
+            android:layout_width="@dimen/size_xlarge"
+            android:layout_height="@dimen/size_xlarge"
+            android:layout_marginRight="@dimen/size_tiny"
+            android:background="@android:color/holo_green_dark" />
+
+        <!-- like button -->
+        <View
+            android:id="@+id/main_demoitem_like"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/size_tiny"
+            android:background="@android:color/holo_blue_bright" />
+
+        <!-- title -->
+        <TextView
+            android:id="@+id/main_demoitem_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_xlarge"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/main_demoitem_image"
+            android:layout_toLeftOf="@id/main_demoitem_like"
+            android:text="Title"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@android:color/black"
+            style="@style/AT.Text.Serif.Title"/>
+
+        <!-- tags -->
+        <HorizontalScrollView
+            android:id="@+id/main_demoitem_tags_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_tiny"
+            android:layout_below="@id/main_demoitem_image">
+
+            <LinearLayout
+                android:id="@+id/main_demoitem_tags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Will be inserted dynamically here -->
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <!-- description -->
+        <TextView
+            android:id="@+id/main_demoitem_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_tiny"
+            android:layout_below="@+id/main_demoitem_tags_scroll"
+            android:text="description will be represented here."
+            android:textColor="@android:color/black"
+            style="@style/AT.Text.Serif_Thin.Normal"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

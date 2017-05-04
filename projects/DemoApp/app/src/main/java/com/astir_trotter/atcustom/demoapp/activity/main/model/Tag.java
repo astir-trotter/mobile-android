@@ -2,6 +2,7 @@ package com.astir_trotter.atcustom.demoapp.activity.main.model;
 
 import android.support.annotation.NonNull;
 
+import com.astir_trotter.atcustom.demoapp.R;
 import com.astir_trotter.atcustom.util.ResourceUtils;
 import com.yalantis.filter.model.FilterModel;
 
@@ -45,13 +46,13 @@ public class Tag implements FilterModel {
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     public enum TagId {
-        UI();
+        All(R.string.demoitem_tag_all, android.R.color.black),
+        UserInterface(R.string.demoitem_tag_1, R.color.demoitem_tag_1),
+        Animation(R.string.demoitem_tag_2, R.color.demoitem_tag_2),
+        API(R.string.demoitem_tag_3, R.color.demoitem_tag_3),
+        Internal(R.string.demoitem_tag_4, R.color.demoitem_tag_4);
 
         private int textResId, colorResId;
-
-        TagId() {
-            this(0, 0);
-        }
 
         TagId(int textResId, int colorResId) {
             this.textResId = textResId;

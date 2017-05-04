@@ -10,12 +10,11 @@ import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import com.astir_trotter.atcustom.demoapp.R;
-import com.astir_trotter.atcustom.demoapp.demo.adapter.QuestionsAdapter;
-import com.astir_trotter.atcustom.demoapp.demo.model.Question;
-import com.astir_trotter.atcustom.demoapp.demo.model.Tag;
+import com.astir_trotter.atcustom.demoapp.activity.main.adapter.DemoItemsAdapter;
+import com.astir_trotter.atcustom.demoapp.activity.main.model.DemoItem;
+import com.astir_trotter.atcustom.demoapp.activity.main.model.Tag;
 import com.astir_trotter.atcustom.singleton.lang.MultiLangStringRes;
 import com.astir_trotter.atcustom.ui.activity.BaseActivity;
-import com.astir_trotter.atcustom.util.ResourceUtils;
 import com.yalantis.filter.adapter.FilterAdapter;
 import com.yalantis.filter.animator.FiltersListItemAnimator;
 import com.yalantis.filter.listener.FilterListener;
@@ -29,11 +28,9 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
 
     private RecyclerView mRecyclerView;
 
-    private int[] mColors;
-    private String[] mTitles;
-    private List<Question> mAllQuestions;
+    private List<DemoItem> mAllDemoItems;
     private Filter<Tag> mFilter;
-    private QuestionsAdapter mAdapter;
+    private DemoItemsAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,25 +41,22 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
 
         ((TextView) findViewById(R.id.actionbar_title)).setText(MultiLangStringRes.getInstance().get(R.string.app_name));
 
-        mColors = ResourceUtils.getColors(R.array.colors);
-        mTitles = ResourceUtils.getStrings(R.array.job_titles);
-
         mFilter = (Filter<Tag>) findViewById(R.id.main_list_filter);
-        mFilter.setAdapter(new Adapter(getTags()));
+        mFilter.setAdapter(new Adapter(Tag.getTags()));
         mFilter.setListener(this);
 
         //the text to show when there's no selected items
-        mFilter.setNoSelectedItemText(getString(R.string.str_all_selected));
+        mFilter.setNoSelectedItemText(MultiLangStringRes.getInstance().get(R.string.demoitem_tag_all));
         mFilter.build();
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.main_list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        mRecyclerView.setAdapter(mAdapter = new QuestionsAdapter(this, mAllQuestions = getQuestions()));
+        mRecyclerView.setAdapter(mAdapter = new DemoItemsAdapter(mAllDemoItems = DemoItem.getAllDemoItems()));
         mRecyclerView.setItemAnimator(new FiltersListItemAnimator());
     }
 
-    private void calculateDiff(final List<Question> oldList, final List<Question> newList) {
+    private void calculateDiff(final List<DemoItem> oldList, final List<DemoItem> newList) {
         DiffUtil.calculateDiff(new DiffUtil.Callback() {
             @Override
             public int getOldListSize() {
@@ -86,84 +80,39 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
         }).dispatchUpdatesTo(mAdapter);
     }
 
-    private List<Tag> getTags() {
-        List<Tag> tags = new ArrayList<>();
-
-        for (int i = 0; i < mTitles.length; ++i) {
-            tags.add(new Tag(mTitles[i], mColors[i]));
-        }
-
-        return tags;
-    }
-
     @Override
     public void onNothingSelected() {
         if (mRecyclerView != null) {
-            mAdapter.setQuestions(mAllQuestions);
+            mAdapter.setQuestions(mAllDemoItems);
             mAdapter.notifyDataSetChanged();
         }
     }
 
-    private List<Question> getQuestions() {
-        return new ArrayList<Question>() {{
-            add(new Question("Carol Bell", "Graphic Designer",
-                    "http://kingofwallpapers.com/girl/girl-011.jpg", "Nov 20, 6:12 PM",
-                    "What is the first step to transform an idea into an actual project?", new ArrayList<Tag>() {{
-                add(new Tag(mTitles[2], mColors[2]));
-                add(new Tag(mTitles[4], mColors[4]));
-            }}));
-            add(new Question("Melissa Morales", "Project Manager",
-                    "http://weknowyourdreams.com/images/girl/girl-03.jpg", "Nov 20, 3:48 AM",
-                    "What is your biggest frustration with taking your business/career (in a corporate) to the next level?", new ArrayList<Tag>() {{
-                add(new Tag(mTitles[1], mColors[1]));
-                add(new Tag(mTitles[5], mColors[5]));
-            }}));
-            add(new Question("Rochelle Yingst", "iOS Developer",
-                    "http://www.viraldoza.com/wp-content/uploads/2014/03/8876509-lily-pretty-girl.jpg", "Nov 20, 6:12 PM",
-                    "What is the first step to transform an idea into an actual project?", new ArrayList<Tag>() {{
-                add(new Tag(mTitles[7], mColors[7]));
-                add(new Tag(mTitles[8], mColors[8]));
-            }}));
-            add(new Question("Lacey Barbara", "QA Engineer",
-                    "http://kingofwallpapers.com/girl/girl-019.jpg", "Nov 20, 6:12 PM",
-                    "What is the first step to transform an idea into an actual project?", new ArrayList<Tag>() {{
-                add(new Tag(mTitles[3], mColors[3]));
-                add(new Tag(mTitles[9], mColors[9]));
-            }}));
-            add(new Question("Teena Allain", "Android Developer",
-                    "http://tribzap2it.files.wordpress.com/2014/09/hannah-simone-new-girl-season-4-cece.jpg", "Nov 20, 6:12 PM",
-                    "What is the first step to transform an idea into an actual project?", new ArrayList<Tag>() {{
-                add(new Tag(mTitles[1], mColors[1]));
-                add(new Tag(mTitles[6], mColors[6]));
-            }}));
-        }};
-    }
+    private List<DemoItem> findByTags(List<Tag> tags) {
+        List<DemoItem> demoItems = new ArrayList<>();
 
-    private List<Question> findByTags(List<Tag> tags) {
-        List<Question> questions = new ArrayList<>();
-
-        for (Question question : mAllQuestions) {
+        for (DemoItem demoItem : mAllDemoItems) {
             for (Tag tag : tags) {
-                if (question.hasTag(tag.getText()) && !questions.contains(question)) {
-                    questions.add(question);
+                if (demoItem.hasTag(tag.getText()) && !demoItems.contains(demoItem)) {
+                    demoItems.add(demoItem);
                 }
             }
         }
 
-        return questions;
+        return demoItems;
     }
 
     @Override
     public void onFiltersSelected(@NonNull ArrayList<Tag> filters) {
-        List<Question> newQuestions = findByTags(filters);
-        List<Question> oldQuestions = mAdapter.getQuestions();
-        mAdapter.setQuestions(newQuestions);
-        calculateDiff(oldQuestions, newQuestions);
+        List<DemoItem> newDemoItems = findByTags(filters);
+        List<DemoItem> oldDemoItems = mAdapter.getQuestions();
+        mAdapter.setQuestions(newDemoItems);
+        calculateDiff(oldDemoItems, newDemoItems);
     }
 
     @Override
     public void onFilterSelected(Tag item) {
-        if (item.getText().equals(mTitles[0])) {
+        if (item.getText().equals(MultiLangStringRes.getInstance().get(R.string.demoitem_tag_all))) {
             mFilter.deselectAll();
             mFilter.collapse();
         }
@@ -195,11 +144,11 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
         public FilterItem createView(int position, Tag item) {
             FilterItem filterItem = new FilterItem(MainActivity.this);
 
-            filterItem.setStrokeColor(mColors[0]);
-            filterItem.setTextColor(mColors[0]);
+            filterItem.setStrokeColor(item.getColor());
+            filterItem.setTextColor(item.getColor());
             filterItem.setCheckedTextColor(ContextCompat.getColor(MainActivity.this, android.R.color.white));
             filterItem.setColor(ContextCompat.getColor(MainActivity.this, android.R.color.white));
-            filterItem.setCheckedColor(mColors[position]);
+            filterItem.setCheckedColor(item.getColor());
             filterItem.setText(item.getText());
             filterItem.deselect();
 

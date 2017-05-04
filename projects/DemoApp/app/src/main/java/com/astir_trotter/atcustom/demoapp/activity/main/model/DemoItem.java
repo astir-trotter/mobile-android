@@ -1,5 +1,6 @@
 package com.astir_trotter.atcustom.demoapp.activity.main.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -88,5 +89,17 @@ public class DemoItem {
                 imageResId * 31 +
                 tags.hashCode() * 31 +
                 (like ? 1 : 0);
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static List<DemoItem> getAllDemoItems() {
+        return new ArrayList<DemoItem>() {{
+            add(new DemoItem(1, "Shimmer1", "Shimmer animation", 0, Tag.getTags(Tag.TagId.UserInterface, Tag.TagId.Animation)));
+            add(new DemoItem(1, "Shimmer2", "Shimmer animation", 0, Tag.getTags(Tag.TagId.UserInterface, Tag.TagId.Animation)));
+            add(new DemoItem(1, "Shimmer3", "Shimmer animation", 0, Tag.getTags(Tag.TagId.UserInterface, Tag.TagId.Animation)));
+            add(new DemoItem(1, "Shimmer4", "Shimmer animation", 0, Tag.getTags(Tag.TagId.UserInterface, Tag.TagId.Animation)));
+            add(new DemoItem(1, "Shimmer5", "Shimmer animation", 0, Tag.getTags(Tag.TagId.UserInterface, Tag.TagId.Animation)));
+        }};
     }
 }

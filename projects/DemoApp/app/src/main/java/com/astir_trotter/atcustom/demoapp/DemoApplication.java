@@ -18,7 +18,7 @@ public class DemoApplication extends ATApplication {
 
     @Override
     protected boolean isDebug() {
-        return false;//super.isDebug(); // TESTCODE
+        return false; // TESTCODE
     }
 
     @NonNull
