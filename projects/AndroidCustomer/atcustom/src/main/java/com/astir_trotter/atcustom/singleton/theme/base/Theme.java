@@ -26,6 +26,7 @@ public class Theme {
 
         if (sRegisteredThemes == null)
             sRegisteredThemes = new ArrayList<>();
+
         sRegisteredThemes.add(this);
     }
 

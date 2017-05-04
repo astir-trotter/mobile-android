@@ -7,6 +7,8 @@ import com.astir_trotter.atcustom.component.AppInfo;
 import com.astir_trotter.atcustom.singleton.Cache;
 import com.astir_trotter.atcustom.singleton.lang.MultiLangStringRes;
 import com.astir_trotter.atcustom.singleton.lang.base.Language;
+import com.astir_trotter.atcustom.singleton.theme.MultiThemeColorRes;
+import com.astir_trotter.atcustom.singleton.theme.base.Theme;
 import com.astir_trotter.atcustom.ui.activity.base.AutoCrashReporter;
 
 /**

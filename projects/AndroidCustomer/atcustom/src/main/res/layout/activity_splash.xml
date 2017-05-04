@@ -29,7 +29,7 @@
                 android:id="@+id/app_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="bottom"
+                android:gravity="bottom|center_horizontal"
                 android:text="APP_NAME VERSION"
                 style="@style/AT.Text.Serif.Title"/>
             <TextView
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_small"
-                android:gravity="bottom"
+                android:gravity="bottom|center_horizontal"
                 android:text="APP_DESCRIPTION"
                 style="@style/AT.Text.Serif.Subtitle"/>
         </LinearLayout>

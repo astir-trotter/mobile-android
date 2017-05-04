@@ -32,17 +32,17 @@ public class MultiThemeColorRes {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private Map<Theme, ColorRes> MultiThemeColorRes;
+    private Map<Theme, ColorRes> mMultiThemeColorRes;
 
     private MultiThemeColorRes() {
-        MultiThemeColorRes = new HashMap<>();
+        mMultiThemeColorRes = new HashMap<>();
     }
 
     public ColorRes getColorRes(Theme theme) {
-        ColorRes ColorRes = MultiThemeColorRes.get(theme);
+        ColorRes ColorRes = mMultiThemeColorRes.get(theme);
         if (ColorRes == null) {
             ColorRes = new ColorRes(theme);
-            MultiThemeColorRes.put(theme, ColorRes);
+            mMultiThemeColorRes.put(theme, ColorRes);
         }
 
         return ColorRes;

@@ -31,17 +31,17 @@ public class MultiLangStringRes {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    private Map<Language, StringRes> multiLangStringRes;
+    private Map<Language, StringRes> mMultiLangStringRes;
 
     private MultiLangStringRes() {
-        multiLangStringRes = new HashMap<>();
+        mMultiLangStringRes = new HashMap<>();
     }
 
     public StringRes getStringRes(Language language) {
-        StringRes stringRes = multiLangStringRes.get(language);
+        StringRes stringRes = mMultiLangStringRes.get(language);
         if (stringRes == null) {
             stringRes = new StringRes(language);
-            multiLangStringRes.put(language, stringRes);
+            mMultiLangStringRes.put(language, stringRes);
         }
 
         return stringRes;
