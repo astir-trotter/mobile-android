@@ -11,7 +11,7 @@
         android:id="@+id/main_demoitem_dividerTop"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_xbit"
-        android:background="#E4E6E3"/>
+        android:background="@color/main_list_back"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,8 +21,8 @@
         <!-- image -->
         <View
             android:id="@+id/main_demoitem_image"
-            android:layout_width="@dimen/size_xlarge"
-            android:layout_height="@dimen/size_xlarge"
+            android:layout_width="@dimen/size_hlarge"
+            android:layout_height="@dimen/size_hlarge"
             android:layout_marginRight="@dimen/size_tiny"
             android:background="@android:color/holo_green_dark" />
 
@@ -39,7 +39,7 @@
         <TextView
             android:id="@+id/main_demoitem_title"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_xlarge"
+            android:layout_height="@dimen/size_hlarge"
             android:gravity="center_vertical"
             android:layout_toRightOf="@+id/main_demoitem_image"
             android:layout_toLeftOf="@id/main_demoitem_like"
@@ -47,7 +47,7 @@
             android:maxLines="2"
             android:ellipsize="end"
             android:textColor="@android:color/black"
-            style="@style/AT.Text.Serif.Title"/>
+            style="@style/AT.Text.Serif.Subtitle"/>
 
         <!-- tags -->
         <HorizontalScrollView
@@ -55,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_tiny"
+            android:paddingLeft="@dimen/size_large"
             android:layout_below="@id/main_demoitem_image">
 
             <LinearLayout
@@ -75,6 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_tiny"
+            android:paddingLeft="@dimen/size_normal"
             android:layout_below="@+id/main_demoitem_tags_scroll"
             android:text="description will be represented here."
             android:textColor="@android:color/black"

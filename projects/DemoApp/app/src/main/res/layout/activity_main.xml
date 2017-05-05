@@ -68,7 +68,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/container_height"
             tools:listitem="@layout/main_demoitem"
-            android:background="@android:color/black"/>
+            android:background="@color/main_list_back"/>
 
         <com.yalantis.filter.widget.Filter
             android:id="@+id/main_list_filter"

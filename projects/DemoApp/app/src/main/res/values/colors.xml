@@ -8,4 +8,5 @@
     <color name="demoitem_tag_2">#ff0</color>
     <color name="demoitem_tag_3">#f0f</color>
     <color name="demoitem_tag_4">#0f0</color>
+    <color name="main_list_back">#E4E6E3</color>
 </resources>

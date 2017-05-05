@@ -2,6 +2,7 @@ package com.astir_trotter.atcustom.demoapp.activity.main.adapter;
 
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,20 +47,29 @@ public class DemoItemsAdapter extends RecyclerView.Adapter<DemoItemsAdapter.View
         holder.description.setText(demoItem.getDescription());
         holder.tags.removeAllViews();
 
-        int padding = ResourceUtils.getDimension(R.dimen.size_tiny);
+        // tags
+        int textSize = ResourceUtils.getDimension(R.dimen.textsize_tiny);
+        int padding = textSize / 4;
         int textColor = MultiThemeColorRes.getInstance().get(android.R.color.white);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        params.setMargins(padding, 0, padding, 0);
         for (Tag tag : demoItem.getTags()) {
             TextView tagView = new TextView(Cache.getInstance().getContext());
             tagView.setTextColor(textColor);
             tagView.setPadding(padding, padding / 2, padding, padding / 2);
             tagView.setText(tag.getText());
+            tagView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
 
+            // round background
             GradientDrawable drawable = new GradientDrawable();
             drawable.setCornerRadius(1000);
             drawable.setColor(tag.getColor());
             tagView.setBackgroundDrawable(drawable);
 
-            holder.tags.addView(tagView);
+            holder.tags.addView(tagView, params);
         }
     }
 
