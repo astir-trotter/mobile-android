@@ -12,6 +12,8 @@ import com.astir_trotter.atcustom.demoapp.R;
 import com.astir_trotter.atcustom.demoapp.activity.main.model.DemoItem;
 import com.astir_trotter.atcustom.demoapp.activity.main.model.Tag;
 import com.astir_trotter.atcustom.singleton.Cache;
+import com.astir_trotter.atcustom.singleton.theme.MultiThemeColorRes;
+import com.astir_trotter.atcustom.util.ResourceUtils;
 
 import java.util.List;
 
@@ -43,8 +45,13 @@ public class DemoItemsAdapter extends RecyclerView.Adapter<DemoItemsAdapter.View
         holder.title.setText(demoItem.getTitle());
         holder.description.setText(demoItem.getDescription());
         holder.tags.removeAllViews();
+
+        int padding = ResourceUtils.getDimension(R.dimen.size_tiny);
+        int textColor = MultiThemeColorRes.getInstance().get(android.R.color.white);
         for (Tag tag : demoItem.getTags()) {
             TextView tagView = new TextView(Cache.getInstance().getContext());
+            tagView.setTextColor(textColor);
+            tagView.setPadding(padding, padding / 2, padding, padding / 2);
             tagView.setText(tag.getText());
 
             GradientDrawable drawable = new GradientDrawable();
