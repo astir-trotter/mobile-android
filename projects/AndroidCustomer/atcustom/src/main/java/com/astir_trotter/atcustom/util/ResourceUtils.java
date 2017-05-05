@@ -5,9 +5,7 @@
  */
 package com.astir_trotter.atcustom.util;
 
-import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.support.annotation.ArrayRes;
 import android.support.annotation.BoolRes;
 import android.support.annotation.ColorRes;
@@ -51,11 +49,11 @@ public class ResourceUtils {
         return getIntegers(resId);
     }
 
-    public static int getDimension(Context context, @DimenRes int resId) {
-        return context.getResources().getDimensionPixelSize(resId);
+    public static int getDimension(@DimenRes int resId) {
+        return Cache.getInstance().getContext().getResources().getDimensionPixelSize(resId);
     }
 
-    public static Drawable getDrawable(Context context, @DrawableRes int drawableId) {
-        return context.getResources().getDrawable(drawableId);
+    public static Drawable getDrawable(@DrawableRes int drawableId) {
+        return Cache.getInstance().getContext().getResources().getDrawable(drawableId);
     }
 }
