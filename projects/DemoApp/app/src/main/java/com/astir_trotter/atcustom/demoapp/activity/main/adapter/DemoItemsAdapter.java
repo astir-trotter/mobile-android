@@ -15,6 +15,7 @@ import com.astir_trotter.atcustom.demoapp.activity.main.model.Tag;
 import com.astir_trotter.atcustom.singleton.Cache;
 import com.astir_trotter.atcustom.singleton.theme.MultiThemeColorRes;
 import com.astir_trotter.atcustom.util.ResourceUtils;
+import com.ramotion.foldingcell.FoldingCell;
 
 import java.util.List;
 
@@ -88,6 +89,17 @@ public class DemoItemsAdapter extends RecyclerView.Adapter<DemoItemsAdapter.View
 
         public ViewHolder(View itemView) {
             super(itemView);
+
+            // get our folding cell
+            final FoldingCell fc = (FoldingCell) itemView.findViewById(R.id.main_demoitem_foldingcell);
+
+            // attach click listener to folding cell
+            fc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    fc.toggle(false);
+                }
+            });
 
             image = itemView.findViewById(R.id.main_demoitem_image);
             title = (TextView) itemView.findViewById(R.id.main_demoitem_title);

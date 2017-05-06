@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="500dp"
     android:background="@android:color/white"
     android:orientation="vertical">
 
@@ -13,75 +13,92 @@
         android:layout_height="@dimen/size_xbit"
         android:background="@color/main_list_back"/>
 
-    <RelativeLayout
+    <com.ramotion.foldingcell.FoldingCell
+        android:id="@+id/main_demoitem_foldingcell"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/size_tiny">
+        android:layout_height="wrap_content">​
 
-        <!-- image -->
-        <View
-            android:id="@+id/main_demoitem_image"
-            android:layout_width="@dimen/size_hlarge"
-            android:layout_height="@dimen/size_hlarge"
-            android:layout_marginRight="@dimen/size_tiny"
-            android:background="@android:color/holo_green_dark" />
-
-        <!-- like button -->
-        <View
-            android:id="@+id/main_demoitem_like"
-            android:layout_width="@dimen/icon_size"
-            android:layout_height="@dimen/icon_size"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="@dimen/size_tiny"
-            android:background="@android:color/holo_blue_bright" />
-
-        <!-- title -->
-        <TextView
-            android:id="@+id/main_demoitem_title"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_hlarge"
-            android:gravity="center_vertical"
-            android:layout_toRightOf="@+id/main_demoitem_image"
-            android:layout_toLeftOf="@id/main_demoitem_like"
-            android:text="Title"
-            android:maxLines="2"
-            android:ellipsize="end"
-            android:textColor="@android:color/black"
-            style="@style/AT.Text.Serif.Subtitle"/>
-
-        <!-- tags -->
-        <HorizontalScrollView
-            android:id="@+id/main_demoitem_tags_scroll"
+        <!-- TESTCODE -->
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/size_tiny"
-            android:paddingLeft="@dimen/size_large"
-            android:layout_below="@id/main_demoitem_image">
+            android:visibility="gone">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+        </FrameLayout>
 
-            <LinearLayout
-                android:id="@+id/main_demoitem_tags"
-                android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_tiny">
+
+            <!-- image -->
+            <View
+                android:id="@+id/main_demoitem_image"
+                android:layout_width="@dimen/size_hlarge"
+                android:layout_height="@dimen/size_hlarge"
+                android:layout_marginRight="@dimen/size_tiny"
+                android:background="@android:color/holo_green_dark" />
+
+            <!-- like button -->
+            <View
+                android:id="@+id/main_demoitem_like"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/size_tiny"
+                android:background="@android:color/holo_blue_bright" />
+
+            <!-- title -->
+            <TextView
+                android:id="@+id/main_demoitem_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_hlarge"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@+id/main_demoitem_image"
+                android:layout_toLeftOf="@id/main_demoitem_like"
+                android:text="Title"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@android:color/black"
+                style="@style/AT.Text.Serif.Subtitle"/>
+
+            <!-- tags -->
+            <HorizontalScrollView
+                android:id="@+id/main_demoitem_tags_scroll"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginTop="@dimen/size_tiny"
+                android:paddingLeft="@dimen/size_large"
+                android:layout_below="@id/main_demoitem_image">
 
-                <!-- Will be inserted dynamically here -->
+                <LinearLayout
+                    android:id="@+id/main_demoitem_tags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            </LinearLayout>
+                    <!-- Will be inserted dynamically here -->
 
-        </HorizontalScrollView>
+                </LinearLayout>
 
-        <!-- description -->
-        <TextView
-            android:id="@+id/main_demoitem_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/size_tiny"
-            android:paddingLeft="@dimen/size_normal"
-            android:layout_below="@+id/main_demoitem_tags_scroll"
-            android:text="description will be represented here."
-            android:textColor="@android:color/black"
-            style="@style/AT.Text.Serif_Thin.Normal"/>
+            </HorizontalScrollView>
 
-    </RelativeLayout>
+            <!-- description -->
+            <TextView
+                android:id="@+id/main_demoitem_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_tiny"
+                android:paddingLeft="@dimen/size_normal"
+                android:layout_below="@+id/main_demoitem_tags_scroll"
+                android:text="description will be represented here."
+                android:textColor="@android:color/black"
+                style="@style/AT.Text.Serif_Thin.Normal"/>
+
+        </RelativeLayout>
+
+    </com.ramotion.foldingcell.FoldingCell>
 
 </LinearLayout>
