@@ -76,4 +76,18 @@
 
     </com.astir_trotter.atcustom.ui.layout.shimmer.ShimmerFrameLayout>
 
+    <com.jetradarmobile.snowfall.SnowfallView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:snowflakesNum="150"
+        app:snowflakeAlphaMin="150"
+        app:snowflakeAlphaMax="255"
+        app:snowflakeAngleMax="5"
+        app:snowflakeSizeMin="@dimen/size_bit"
+        app:snowflakeSizeMax="@dimen/size_xbit"
+        app:snowflakeSpeedMin="4"
+        app:snowflakeSpeedMax="12"
+        app:snowflakesFadingEnabled="true"
+        app:snowflakesAlreadyFalling="true"/>
+
 </android.support.percent.PercentRelativeLayout>

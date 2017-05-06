@@ -36,4 +36,5 @@ dependencies {
     compile 'com.yalantis:starwarstiles:0.1.1'
     compile 'com.github.Yalantis:SearchFilter:v1.0.3'
     compile 'com.ramotion.foldingcell:folding-cell:1.1.0'
+    compile 'com.github.jetradarmobile:android-snowfall:1.1.6'
 }
