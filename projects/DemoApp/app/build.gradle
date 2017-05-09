@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.astir_trotter.atcustom.demoapp"
-        minSdkVersion 18
+        minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
         versionName "v0.3"
