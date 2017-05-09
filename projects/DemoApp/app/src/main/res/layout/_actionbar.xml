@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<android.support.v7.widget.Toolbar
+    android:id="@+id/actionbar"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+<!--
 <android.support.design.widget.AppBarLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,7 +20,7 @@
     app:theme="@style/AT.AppBarOverlay">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/main_tb"
+        android:id="@+id/actionbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:paddingRight="@dimen/size_small"
@@ -20,7 +32,7 @@
             android:layout_height="match_parent">
 
             <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/main_tb_icon_left"
+                android:id="@+id/actionbar_icon_left"
                 android:layout_width="@dimen/icon_size"
                 android:layout_height="@dimen/icon_size"
                 android:layout_centerVertical="true"
@@ -28,7 +40,7 @@
                 android:tint="@android:color/white" />
 
             <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/main_tb_icon_right"
+                android:id="@+id/actionbar_icon_right"
                 android:layout_width="@dimen/icon_size"
                 android:layout_height="@dimen/icon_size"
                 android:layout_alignParentRight="true"
@@ -42,8 +54,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_toEndOf="@id/main_tb_icon_left"
-                android:layout_toStartOf="@id/main_tb_icon_right"
+                android:layout_toEndOf="@id/actionbar_icon_left"
+                android:layout_toStartOf="@id/actionbar_icon_right"
                 android:text="@string/app_name"
                 android:gravity="center"
                 style="@style/AT.Text.ActionBar.Title"/>
@@ -53,3 +65,4 @@
     </android.support.v7.widget.Toolbar>
 
 </android.support.design.widget.AppBarLayout>
+-->

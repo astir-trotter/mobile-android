@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">DemoApp</string>
 
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
     <string name="demoitem_tag_all">All Categories</string>
     <string name="demoitem_tag_1">User Interface</string>
     <string name="demoitem_tag_2">Animation</string>

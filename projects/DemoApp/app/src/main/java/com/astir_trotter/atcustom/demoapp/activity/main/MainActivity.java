@@ -1,12 +1,16 @@
-package com.astir_trotter.atcustom.demoapp.activity;
+package com.astir_trotter.atcustom.demoapp.activity.main;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.astir_trotter.atcustom.demoapp.R;
@@ -25,6 +29,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends BaseActivity implements FilterListener<Tag> {
+    private static final String TAG = MainActivity.class.getSimpleName();
+
+    ActionBarDrawerToggle drawerToggle;
+    DrawerLayout drawerLayout;
+    Toolbar toolbar;
 
     private RecyclerView mRecyclerView;
 
@@ -36,24 +45,29 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.main_tb);
+
+        toolbar = (Toolbar) findViewById(R.id.actionbar);
         setSupportActionBar(toolbar);
 
-        ((TextView) findViewById(R.id.actionbar_title)).setText(MultiLangStringRes.getInstance().get(R.string.app_name));
+        drawerLayout = (DrawerLayout) findViewById(R.id.main_drawer_layout);
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
+        drawerLayout.addDrawerListener(drawerToggle);
 
-        mFilter = (Filter<Tag>) findViewById(R.id.main_list_filter);
-        mFilter.setAdapter(new Adapter(Tag.getTags()));
-        mFilter.setListener(this);
-
-        //the text to show when there's no selected items
-        mFilter.setNoSelectedItemText(MultiLangStringRes.getInstance().get(R.string.demoitem_tag_all));
-        mFilter.build();
-
-
-        mRecyclerView = (RecyclerView) findViewById(R.id.main_list);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        mRecyclerView.setAdapter(mAdapter = new DemoItemsAdapter(mAllDemoItems = DemoItem.getAllDemoItems()));
-        mRecyclerView.setItemAnimator(new FiltersListItemAnimator());
+//        ((TextView) findViewById(R.id.actionbar_title)).setText(MultiLangStringRes.getInstance().get(R.string.app_name));
+//
+//        mFilter = (Filter<Tag>) findViewById(R.id.main_list_filter);
+//        mFilter.setAdapter(new Adapter(Tag.getTags()));
+//        mFilter.setListener(this);
+//
+//        //the text to show when there's no selected items
+//        mFilter.setNoSelectedItemText(MultiLangStringRes.getInstance().get(R.string.demoitem_tag_all));
+//        mFilter.build();
+//
+//
+//        mRecyclerView = (RecyclerView) findViewById(R.id.main_list);
+//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+//        mRecyclerView.setAdapter(mAdapter = new DemoItemsAdapter(mAllDemoItems = DemoItem.getAllDemoItems()));
+//        mRecyclerView.setItemAnimator(new FiltersListItemAnimator());
     }
 
     private void calculateDiff(final List<DemoItem> oldList, final List<DemoItem> newList) {
@@ -154,5 +168,22 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
 
             return filterItem;
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return drawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        drawerToggle.syncState();
+        super.onPostCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        drawerToggle.onConfigurationChanged(newConfig);
     }
 }
