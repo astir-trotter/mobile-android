@@ -38,4 +38,5 @@ dependencies {
     compile 'com.ramotion.foldingcell:folding-cell:1.1.0'               // animation/layout of      folding cell
     compile 'com.github.jetradarmobile:android-snowfall:1.1.6'          // animation of             snow fall
     compile 'com.github.siyamed:android-shape-imageview:0.9.3@aar'      // layout of                shaped image view
+    compile 'com.borjabravo:footernavigationview:1.0.0'                 // layout of                drawer with footer
 }
