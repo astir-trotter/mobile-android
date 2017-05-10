@@ -33,8 +33,9 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
 
-    compile 'com.yalantis:starwarstiles:0.1.1'
-    compile 'com.github.Yalantis:SearchFilter:v1.0.3'
-    compile 'com.ramotion.foldingcell:folding-cell:1.1.0'
-    compile 'com.github.jetradarmobile:android-snowfall:1.1.6'
+    compile 'com.yalantis:starwarstiles:0.1.1'                          // animation/activity of    spark
+    compile 'com.github.Yalantis:SearchFilter:v1.0.3'                   // animation/layout of      dropdown search filter
+    compile 'com.ramotion.foldingcell:folding-cell:1.1.0'               // animation/layout of      folding cell
+    compile 'com.github.jetradarmobile:android-snowfall:1.1.6'          // animation of             snow fall
+    compile 'com.github.siyamed:android-shape-imageview:0.9.3@aar'      // layout of                shaped image view
 }
