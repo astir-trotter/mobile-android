@@ -92,8 +92,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected void initLanguage() { }
 
-    protected abstract void representTheme();
+    protected void representTheme() { }
 
-    protected abstract void representLanguage();
+    protected void representLanguage() { }
 
 }

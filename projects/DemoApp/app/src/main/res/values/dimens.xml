@@ -1,7 +1,6 @@
 <resources>
+    <dimen name="drawer_header_size">172dp</dimen>
+    <dimen name="drawer_crop_size">@dimen/size_xlarge</dimen>
+    <dimen name="avatar_size">@dimen/size_xlarge</dimen>
     <dimen name="icon_size">@dimen/size_normal</dimen>
-
-    <dimen name="header_layout_height">172dp</dimen>
-    <dimen name="status_bar_height">25dp</dimen>
-    <dimen name="avatar_size">64dp</dimen>
 </resources>

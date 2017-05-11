@@ -64,7 +64,7 @@ public class DemoItemsAdapter extends RecyclerView.Adapter<DemoItemsAdapter.View
             tagView.setText(tag.getText());
             tagView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
 
-            // round background
+            // round shimmer_background
             GradientDrawable drawable = new GradientDrawable();
             drawable.setCornerRadius(1000);
             drawable.setColor(tag.getColor());

@@ -7,11 +7,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.util.DiffUtil;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.astir_trotter.atcustom.demoapp.R;
 import com.astir_trotter.atcustom.demoapp.activity.main.adapter.DemoItemsAdapter;
@@ -20,7 +18,6 @@ import com.astir_trotter.atcustom.demoapp.activity.main.model.Tag;
 import com.astir_trotter.atcustom.singleton.lang.MultiLangStringRes;
 import com.astir_trotter.atcustom.ui.activity.BaseActivity;
 import com.yalantis.filter.adapter.FilterAdapter;
-import com.yalantis.filter.animator.FiltersListItemAnimator;
 import com.yalantis.filter.listener.FilterListener;
 import com.yalantis.filter.widget.Filter;
 import com.yalantis.filter.widget.FilterItem;
@@ -48,6 +45,7 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
 
         toolbar = (Toolbar) findViewById(R.id.actionbar);
         setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.main_drawer_layout);
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
@@ -134,16 +132,6 @@ public class MainActivity extends BaseActivity implements FilterListener<Tag> {
 
     @Override
     public void onFilterDeselected(Tag item) {
-
-    }
-
-    @Override
-    protected void representTheme() {
-
-    }
-
-    @Override
-    protected void representLanguage() {
 
     }
 

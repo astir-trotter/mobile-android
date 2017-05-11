@@ -15,11 +15,9 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
 
-import com.astir_trotter.atcustom.ui.activity.BaseActivity;
 import com.astir_trotter.atcustom.ui.activity.CrashReporterActivity;
 import com.astir_trotter.atcustom.util.LogHelper;
 import com.astir_trotter.atcustom.util.TimeUtils;
-import com.astir_trotter.atcustom.util.ViewUtils;
 
 import java.io.BufferedReader;
 import java.io.File;

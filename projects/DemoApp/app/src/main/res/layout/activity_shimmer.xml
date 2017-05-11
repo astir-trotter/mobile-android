@@ -4,7 +4,7 @@
     xmlns:shimmer="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/shimmer_background"
     android:orientation="vertical"
     android:padding="20dp">
 
@@ -25,7 +25,7 @@
       <ImageView
           android:layout_width="64dp"
           android:layout_height="64dp"
-          android:src="@drawable/fb_logo"/>
+          android:src="@drawable/shimmer_fb_logo"/>
 
       <TextView
           android:layout_width="wrap_content"

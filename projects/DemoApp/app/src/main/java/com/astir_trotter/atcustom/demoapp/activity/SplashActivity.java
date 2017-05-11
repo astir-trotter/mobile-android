@@ -20,6 +20,7 @@ public class SplashActivity extends com.astir_trotter.atcustom.ui.activity.Splas
 
     @Override
     protected long getDelayDuration() {
-        return 1000;//super.getDelayDuration(); // TESTCODE
+        return 1000; // TESTCODE
+//        return super.getDelayDuration();
     }
 }

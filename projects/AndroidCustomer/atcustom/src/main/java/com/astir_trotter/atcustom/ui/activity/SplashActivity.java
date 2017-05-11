@@ -65,19 +65,6 @@ public class SplashActivity extends BaseActivity {
             mDelayedTransit = null;
     }
 
-    @Override
-    protected void representTheme() {
-
-    }
-
-    @Override
-    protected void representLanguage() {
-        if (getContentView() == null &&
-                getContentLayout() == 0) {
-
-        }
-    }
-
     private void transit() {
         assert getNextActivityClass() != null;
         transit(getNextActivityClass(), true);

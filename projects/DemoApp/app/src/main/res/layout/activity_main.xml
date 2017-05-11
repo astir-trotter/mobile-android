@@ -22,12 +22,15 @@
 
     </RelativeLayout>
 
-    <android.support.design.widget.NavigationView
+    <com.rom4ek.arcnavigationview.ArcNavigationView
         android:id="@+id/main_navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@android:color/white"
         app:headerLayout="@layout/_drawer_header"
-        app:menu="@menu/menu_drawer" />
+        app:menu="@menu/drawer_menu"
+        app:arc_cropDirection="cropOutside"
+        app:arc_width="@dimen/drawer_crop_size"/>
 
 </android.support.v4.widget.DrawerLayout>

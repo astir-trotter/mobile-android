@@ -70,16 +70,6 @@ public class ShimmerActivity extends BaseActivity {
     }
 
     @Override
-    protected void representTheme() {
-
-    }
-
-    @Override
-    protected void representLanguage() {
-
-    }
-
-    @Override
     public void onPause() {
         mShimmerViewContainer.stopShimmerAnimation();
         super.onPause();
