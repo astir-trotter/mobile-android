@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.util.SparseArrayCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.astir_trotter.atcustom.demoapp.R;
 import com.astir_trotter.atcustom.demoapp.activity.main.fragment.AboutFragment;
@@ -23,11 +23,14 @@ import com.astir_trotter.atcustom.ui.activity.BaseActivity;
 public class MainActivity extends BaseActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
+    private static final String FRAGMENTS = "fragments";
+
     Toolbar toolbar;
     FragmentManager fragmentManager;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle drawerToggle;
+    SparseArrayCompat<Fragment> fragments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +41,10 @@ public class MainActivity extends BaseActivity {
 
         setupView();
 
-        if (savedInstanceState == null)
+        if (savedInstanceState == null) {
+            fragments = new SparseArrayCompat<>();
             showHome();
+        }
     }
 
     private void setupView() {
@@ -77,48 +82,59 @@ public class MainActivity extends BaseActivity {
         drawerToggle.onConfigurationChanged(newConfig);
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
     private void showHome() {
         selectDrawerItem(navigationView.getMenu().getItem(0));
     }
 
     private void selectDrawerItem(MenuItem menuItem) {
-        Class fragmentClass;
+        Fragment fragment = fragments.get(menuItem.getItemId());
 
-        switch (menuItem.getItemId()) {
-            case R.id.drawer_home:
-                fragmentClass = HomeFragment.class;
-                break;
-            case R.id.drawer_chat:
-                fragmentClass = ChatFragment.class;
-                break;
-            case R.id.drawer_news:
-                fragmentClass = NewsFragment.class;
-                break;
+        if (fragment == null) {
+            Class fragmentClass;
+            switch (menuItem.getItemId()) {
+                case R.id.drawer_home:
+                    fragmentClass = HomeFragment.class;
+                    break;
+                case R.id.drawer_chat:
+                    fragmentClass = ChatFragment.class;
+                    break;
+                case R.id.drawer_news:
+                    fragmentClass = NewsFragment.class;
+                    break;
 
-            case R.id.drawer_settings:
-                fragmentClass = SettingsFragment.class;
-                break;
-            case R.id.drawer_feedback:
-                fragmentClass = FeedbackFragment.class;
-                break;
-            case R.id.drawer_about:
-                fragmentClass = AboutFragment.class;
-                break;
+                // Other
+                case R.id.drawer_settings:
+                    fragmentClass = SettingsFragment.class;
+                    break;
+                case R.id.drawer_feedback:
+                    fragmentClass = FeedbackFragment.class;
+                    break;
+                case R.id.drawer_about:
+                    fragmentClass = AboutFragment.class;
+                    break;
 
-            default:
-                throw new IllegalArgumentException("Unknown menu item selected.");
-        }
+                default:
+                    throw new IllegalArgumentException("Unknown menu item selected.");
+            }
 
-        try {
-            Fragment fragment = (Fragment) fragmentClass.newInstance();
-            fragmentManager.beginTransaction().replace(R.id.main_content_frame, fragment).commit();
-        } catch (Exception e) {
-            e.printStackTrace();
+            try {
+                fragment = (Fragment) fragmentClass.newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            fragments.put(menuItem.getItemId(), fragment);
         }
 
         menuItem.setChecked(true);
         setTitle(menuItem.getTitle());
         drawerLayout.closeDrawers();
+        fragmentManager.beginTransaction().replace(R.id.main_content_frame, fragment).commit();
     }
 
 //    @Override
