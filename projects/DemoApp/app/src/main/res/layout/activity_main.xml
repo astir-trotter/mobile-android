@@ -26,10 +26,14 @@
         android:id="@+id/main_navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:clickable="true"
         android:layout_gravity="start"
-        android:background="@android:color/white"
+        android:background="@color/windowBackground"
         app:headerLayout="@layout/_drawer_header"
         app:menu="@menu/drawer_menu"
+        app:itemIconTint="@color/menu_icon_color"
+        app:itemTextColor="@color/menu_text_color"
+        app:itemBackground="@drawable/menu_background"
         app:arc_cropDirection="cropOutside"
         app:arc_width="@dimen/drawer_crop_size"/>
 
