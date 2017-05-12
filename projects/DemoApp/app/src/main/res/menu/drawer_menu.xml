@@ -7,7 +7,7 @@
         <item
             android:id="@+id/drawer_chat"
             android:icon="@drawable/ic_message_24dp"
-            android:title="Message" />
+            android:title="Chat" />
 
         <item
             android:id="@+id/drawer_news"

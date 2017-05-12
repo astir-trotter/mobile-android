@@ -34,7 +34,7 @@
         app:itemIconTint="@color/menu_icon_color"
         app:itemTextColor="@color/menu_text_color"
         app:itemBackground="@drawable/menu_background"
-        app:arc_cropDirection="cropOutside"
+        app:arc_cropDirection="cropInside"
         app:arc_width="@dimen/drawer_crop_size"/>
 
 </android.support.v4.widget.DrawerLayout>

@@ -1,12 +1,14 @@
 package com.astir_trotter.atcustom.demoapp.activity.main.fragment;
 
+import android.support.v4.app.Fragment;
+
 /**
  * @author - Saori Sugiyama
  * @contact - sugiyama.saori.biz@gmail.com
  * @date - 5/10/17
  */
 
-public class HomeFragment /*implements FilterListener<Tag>*/ {
+public class HomeFragment extends Fragment /*implements FilterListener<Tag>*/ {
     private static final String TAG = HomeFragment.class.getSimpleName();
 
 
