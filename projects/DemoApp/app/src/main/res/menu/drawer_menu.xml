@@ -6,12 +6,37 @@
             android:icon="@drawable/ic_home_24dp"
             android:title="Home" />
         <item
-            android:id="@+id/drawer_favorites"
-            android:icon="@drawable/ic_star_24dp"
-            android:title="Favorites" />
+            android:id="@+id/drawer_chat"
+            android:icon="@drawable/ic_message_24dp"
+            android:title="Message" />
+
         <item
-            android:id="@+id/drawer_settings"
-            android:icon="@drawable/ic_settings_24dp"
-            android:title="Settings" />
+            android:id="@+id/drawer_news"
+            android:icon="@drawable/ic_email_24dp"
+            android:title="News" />
     </group>
+
+    <item android:title="Other">
+        <menu>
+            <group android:checkableBehavior="none">
+                <item
+                    android:id="@+id/drawer_settings"
+                    android:icon="@drawable/ic_settings_24dp"
+                    android:checkable="true"
+                    android:title="Settings" />
+
+                <item
+                    android:id="@+id/drawer_feedback"
+                    android:icon="@drawable/ic_email_24dp"
+                    android:checkable="true"
+                    android:title="Feedback" />
+
+                <item
+                    android:id="@+id/drawer_about"
+                    android:icon="@drawable/ic_person_24dp"
+                    android:checkable="true"
+                    android:title="About Us" />
+            </group>
+        </menu>
+    </item>
 </menu>

@@ -12,6 +12,8 @@
     <dimen name="size_xlarge">72dp</dimen>
     <dimen name="size_xxlarge">144dp</dimen>
 
+    <!-- Text Size -->
+
     <dimen name="textsize_tiny">10sp</dimen>
     <dimen name="textsize_small">15sp</dimen>
     <dimen name="textsize_normal">18sp</dimen>
@@ -20,4 +22,12 @@
     <dimen name="textsize_title">30sp</dimen>
     <dimen name="textsize_subtitle">@dimen/textsize_large</dimen>
     <dimen name="textsize_description">@dimen/textsize_normal</dimen>
+
+    <!-- Icon Size -->
+
+    <dimen name="icon_size">@dimen/size_normal</dimen>
+
+    <!-- Avatar Size -->
+
+    <dimen name="avatar_size">@dimen/size_xlarge</dimen>
 </resources>

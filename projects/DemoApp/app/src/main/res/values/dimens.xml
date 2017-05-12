@@ -1,6 +1,4 @@
 <resources>
     <dimen name="drawer_header_size">172dp</dimen>
     <dimen name="drawer_crop_size">@dimen/size_xlarge</dimen>
-    <dimen name="avatar_size">@dimen/size_xlarge</dimen>
-    <dimen name="icon_size">@dimen/size_normal</dimen>
 </resources>

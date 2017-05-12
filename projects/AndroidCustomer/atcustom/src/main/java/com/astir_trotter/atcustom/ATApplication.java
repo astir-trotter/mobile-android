@@ -49,7 +49,7 @@ public abstract class ATApplication extends Application {
 
     @NonNull
     protected String[] getDeveloperEmailAddress() {
-        return new String[]{"yonis.larsson.biz@gmail.com", "sugiyama.saori.biz@gmail.com"};
+        return new String[]{"yonis.larsson.biz@gmail.com"};
     }
 
     protected String getSubjectForAutoCrashRepot() {
