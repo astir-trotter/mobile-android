@@ -136,9 +136,4 @@ public class MainActivity extends BaseActivity {
         drawerLayout.closeDrawers();
         fragmentManager.beginTransaction().replace(R.id.main_content_frame, fragment).commit();
     }
-
-//    @Override
-//    public void setTitle(CharSequence title) {
-//        ((TextView) toolbar.findViewById(R.id.actionbar_title)).setText(title);
-//    }
 }
