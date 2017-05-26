@@ -50,7 +50,7 @@ public class MultiThemeColorRes {
 
     @Nullable
     public Integer get(Integer id) {
-        Integer ret = getColorRes(Cache.getInstance().getTheme()).get(id);
+        Integer ret = getColorRes(Cache.Companion.getInstance().getTheme()).get(id);
         if (ret == null) {
             try {
                 ret = ResourceUtils.getInteger(id);
@@ -64,7 +64,7 @@ public class MultiThemeColorRes {
 
     @Nullable
     public Integer[] getArray(Integer id) {
-        Integer[] ret = getColorRes(Cache.getInstance().getTheme()).getArray(id);
+        Integer[] ret = getColorRes(Cache.Companion.getInstance().getTheme()).getArray(id);
         if (ret == null) {
             try {
                 ret = (Integer[]) Arrays.asList(ResourceUtils.getIntegers(id)).toArray();

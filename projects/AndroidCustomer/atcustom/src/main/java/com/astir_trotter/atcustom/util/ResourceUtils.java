@@ -22,27 +22,27 @@ public class ResourceUtils {
     private static final String TAG = ResourceUtils.class.getSimpleName();
 
     public static String getString(@StringRes int resId) {
-        return Cache.getInstance().getContext().getResources().getString(resId);
+        return Cache.Companion.getInstance().getContext().getResources().getString(resId);
     }
 
     public static String[] getStrings(@ArrayRes int resId) {
-        return Cache.getInstance().getContext().getResources().getStringArray(resId);
+        return Cache.Companion.getInstance().getContext().getResources().getStringArray(resId);
     }
 
     public static int getInteger(@IntegerRes int resId) {
-        return Cache.getInstance().getContext().getResources().getInteger(resId);
+        return Cache.Companion.getInstance().getContext().getResources().getInteger(resId);
     }
 
     public static int[] getIntegers(@ArrayRes int resId) {
-        return Cache.getInstance().getContext().getResources().getIntArray(resId);
+        return Cache.Companion.getInstance().getContext().getResources().getIntArray(resId);
     }
 
     public static boolean getBool(@BoolRes int resId) {
-        return Cache.getInstance().getContext().getResources().getBoolean(resId);
+        return Cache.Companion.getInstance().getContext().getResources().getBoolean(resId);
     }
 
     public static int getColor(@ColorRes int resId) {
-        return ContextCompat.getColor(Cache.getInstance().getContext(), resId);
+        return ContextCompat.getColor(Cache.Companion.getInstance().getContext(), resId);
     }
 
     public static int[] getColors(@ArrayRes int resId) {
@@ -50,10 +50,10 @@ public class ResourceUtils {
     }
 
     public static int getDimension(@DimenRes int resId) {
-        return Cache.getInstance().getContext().getResources().getDimensionPixelSize(resId);
+        return Cache.Companion.getInstance().getContext().getResources().getDimensionPixelSize(resId);
     }
 
     public static Drawable getDrawable(@DrawableRes int drawableId) {
-        return Cache.getInstance().getContext().getResources().getDrawable(drawableId);
+        return Cache.Companion.getInstance().getContext().getResources().getDrawable(drawableId);
     }
 }

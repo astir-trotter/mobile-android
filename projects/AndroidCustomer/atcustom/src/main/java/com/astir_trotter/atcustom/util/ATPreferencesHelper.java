@@ -30,7 +30,7 @@ public class ATPreferencesHelper {
 	private SharedPreferences preferences;
 
 	private ATPreferencesHelper() {
-		preferences = PreferenceManager.getDefaultSharedPreferences(Cache.getInstance().getContext());
+		preferences = PreferenceManager.getDefaultSharedPreferences(Cache.Companion.getInstance().getContext());
 	}
 
 	public static void putObject(String key, Object object) {

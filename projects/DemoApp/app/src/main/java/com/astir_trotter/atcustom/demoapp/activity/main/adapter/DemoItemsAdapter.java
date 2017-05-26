@@ -58,7 +58,7 @@ public class DemoItemsAdapter extends RecyclerView.Adapter<DemoItemsAdapter.View
         );
         params.setMargins(padding, 0, padding, 0);
         for (Tag tag : demoItem.getTags()) {
-            TextView tagView = new TextView(Cache.getInstance().getContext());
+            TextView tagView = new TextView(Cache.Companion.getInstance().getContext());
             tagView.setTextColor(textColor);
             tagView.setPadding(padding, padding / 2, padding, padding / 2);
             tagView.setText(tag.getText());

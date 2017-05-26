@@ -21,14 +21,14 @@ class DemoApplication : ATApplication() {
     }
 
     override fun getAppInfo(): AppInfo {
-        val appInfo = super.getAppInfo()
+        val appInfo = super.appInfo
         appInfo.appName = ResourceUtils.getString(R.string.app_name)
 
         return appInfo
     }
 
     override fun getDeveloperEmailAddress(): Array<String> {
-        return super.getDeveloperEmailAddress()
+        return super.developerEmailAddress
     }
 
     override fun initMultiLangStringRes() {
@@ -36,7 +36,7 @@ class DemoApplication : ATApplication() {
 
         //        Cache.getInstance().setLanguage(Language.Korean);
 
-        MultiLangStringRes.getInstance().getStringRes(Language.Korean)
+        MultiLangStringRes.instance.getStringRes(Language.Korean)
                 .putRepeat(R.string.app_name, "데모앱")
     }
 }

@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment implements FilterListener<Tag> {
         mFilter.setListener(this);
 
         //the text to show when there's no selected items
-        mFilter.setNoSelectedItemText(MultiLangStringRes.getInstance().get(R.string.demoitem_tag_all));
+        mFilter.setNoSelectedItemText(MultiLangStringRes.Companion.getInstance().get(R.string.demoitem_tag_all));
         mFilter.build();
 
 
@@ -121,7 +121,7 @@ public class HomeFragment extends Fragment implements FilterListener<Tag> {
 
     @Override
     public void onFilterSelected(Tag item) {
-        if (item.getText().equals(MultiLangStringRes.getInstance().get(R.string.demoitem_tag_all))) {
+        if (item.getText().equals(MultiLangStringRes.Companion.getInstance().get(R.string.demoitem_tag_all))) {
             mFilter.deselectAll();
             mFilter.collapse();
         }

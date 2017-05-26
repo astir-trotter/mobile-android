@@ -17,7 +17,7 @@ public class BubblePopupHelper {
 
     public static PopupWindow create(@NonNull BubbleLayout bubbleLayout) {
 
-        PopupWindow popupWindow = new PopupWindow(Cache.getInstance().getContext());
+        PopupWindow popupWindow = new PopupWindow(Cache.Companion.getInstance().getContext());
 
         popupWindow.setContentView(bubbleLayout);
         popupWindow.setOutsideTouchable(true);

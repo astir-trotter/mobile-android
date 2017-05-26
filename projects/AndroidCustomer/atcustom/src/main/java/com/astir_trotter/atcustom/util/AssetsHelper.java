@@ -19,7 +19,7 @@ public class AssetsHelper {
         String fileContent = Constants.EMPTY_STRING;
 
         try {
-            InputStream is = Cache.getInstance().getContext().getAssets().open(filePathName);
+            InputStream is = Cache.Companion.getInstance().getContext().getAssets().open(filePathName);
             int size = is.available();
             byte[] buffer = new byte[size];
             int readSize = is.read(buffer);

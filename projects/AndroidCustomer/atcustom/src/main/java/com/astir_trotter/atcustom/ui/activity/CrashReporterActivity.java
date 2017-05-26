@@ -36,15 +36,15 @@ public class CrashReporterActivity extends Activity implements View.OnClickListe
 
     private void init() {
         TextView tvTitle = (TextView) findViewById(R.id.cr_title);
-        tvTitle.setText(MultiLangStringRes.getInstance().get(R.string.crashreport_title));
+        tvTitle.setText(MultiLangStringRes.Companion.getInstance().get(R.string.crashreport_title));
         TextView tvDescription = (TextView) findViewById(R.id.cr_description);
-        tvDescription.setText(MultiLangStringRes.getInstance().get(R.string.crashreport_description));
+        tvDescription.setText(MultiLangStringRes.Companion.getInstance().get(R.string.crashreport_description));
 
         TextView tvCancel = (TextView) findViewById(R.id.cr_cancel);
-        tvCancel.setText(MultiLangStringRes.getInstance().get(android.R.string.cancel));
+        tvCancel.setText(MultiLangStringRes.Companion.getInstance().get(android.R.string.cancel));
         tvCancel.setOnClickListener(this);
         TextView tvReport = (TextView) findViewById(R.id.cr_ok);
-        tvReport.setText(MultiLangStringRes.getInstance().get(android.R.string.ok));
+        tvReport.setText(MultiLangStringRes.Companion.getInstance().get(android.R.string.ok));
         tvReport.setOnClickListener(this);
     }
 

@@ -69,22 +69,22 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
-        mCurTheme = Cache.getInstance().getTheme();
-        mCurLanguage = Cache.getInstance().getLanguage();
+        mCurTheme = Cache.Companion.getInstance().getTheme();
+        mCurLanguage = Cache.Companion.getInstance().getLanguage();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        if (mCurTheme == null || !mCurTheme.equals(Cache.getInstance().getTheme())) {
+        if (mCurTheme == null || !mCurTheme.equals(Cache.Companion.getInstance().getTheme())) {
             representTheme();
-            mCurTheme = Cache.getInstance().getTheme();
+            mCurTheme = Cache.Companion.getInstance().getTheme();
         }
 
-        if (mCurLanguage == null || !mCurLanguage.equals(Cache.getInstance().getLanguage())) {
+        if (mCurLanguage == null || !mCurLanguage.equals(Cache.Companion.getInstance().getLanguage())) {
             representLanguage();
-            mCurLanguage = Cache.getInstance().getLanguage();
+            mCurLanguage = Cache.Companion.getInstance().getLanguage();
         }
     }
 
